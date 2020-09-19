@@ -1,52 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="co-authored by Ismail Khan and Aaron Clemens">
-  <!-- css -->
-  <link rel="stylesheet" href="styles/style.css">
-  <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="co-authored by Ismail Khan and Aaron Clemens">
+	<!-- css -->
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<!-- google fonts -->
 
-  <title>Hearthstone Card Search Toolkit</title>
+	<!-- favicon -->
+		<!-- hearthstone mana crystal :> -->
+
+	<title>Hearthstone Card Search Toolkit</title>
 </head>
 <body>
-  <header class="selectCol">
-    <!-- Logo and Title -->
-    <img src="./assets/hearthstoneLogo.png" alt="Hearthstone Logo" class="hsLogo">
-    <h1>Hearthstone Card Search Toolkit</h1>
-  </header>
-  <main class="">
-    <section class="selectCol">
-      <!-- form -->
-        <!-- Selection Inputs -->
-        <h2>Card Selection</h2>
-        <!-- Search button -->
-    </section>
+	<header class="selectCol">
+		<!-- Logo and Title -->
+		<img src="./assets/hearthstoneLogo.png" alt="Hearthstone Logo" class="hsLogo">
+		<h1>Hearthstone Card Search Toolkit</h1>
+	</header>
 
-    <section class="cardCol">
-      <!-- cards displayed text -->
-      <p>300 cards displayed</p>
-      <p>THIS IS THE CARD GRID</p>
+	<main>
+		<!-- leftmost column -->
+		<section class="selectCol">
+			<h2>Card Selection</h2>
+			<!-- form -->
+				<!-- Selection Inputs -->
+				<form action="" class="formSubmit">
+					
+					<!-- name search input-->
+					<fieldset class="nameSelect">
+						<label for="name" class="sr-only">Name</label>
+						<input type="text" class="nameSearch" id="name">
+					</fieldset>
 
-      <!-- INJECT HTML FROM JS HERE -->
-    </section>
+					<!-- set -->
+					<fieldset class="setSelect">
+						<label for="set" class="sr-only">Sets</label>
+						<select name="set" id="set">
+							<option value=""></option>
+							<option value="CORE">Basic</option>
+							<option value="EXPERT1">Classic</option>
+							<option value="NAXX">*Curse of Naxxramas</option>
+							<option value="GVG">Goblins vs Gnomes</option>
+							<option value="BRM">*Blackrock Mountain</option>
+							<option value="TGT">The Grand Tournament</option>
+							<option value="LOE">*The League of Explorers</option>
+							<option value="OG">Whispers of Old Gods</option>
+							<option value="KARA">One Night in Karazhan</option>
+							<option value="GANGS">Mean Streets of Gadgetzan</option>
+							<option value="UNGORO">Journey to Un'Goro</option>
+							<option value="ICECROWN">Knights of the Frozen Throne</option>
+							<option value="LOOTAPALOOZA">Kobolds & Catacombs</option>
+							<option value="GILNEAS">The Witchwood</option>
+							<option value="BOOMSDAY">The Boomsday Project</option>
+							<option value="TROLL">Rastakhan's Rumble</option>
+							<option value="DALARAN">Rise of Shadows</option>
+							<option value="ULDUM">Saviors of Uldum</option>
+							<option value="DRAGONS">Descent of Dragons</option>
+							<option value="YEAR_OF_THE_DRAGON">*Galakrond's Awakening</option>
+							<option value="DEMON_HUNTER_INITIATE">**Demon Hunter Initiate</option>
+							<option value="BLACK_TEMPLE">Ashes of Outland</option>
+							<option value="SCHOLOMANCE">Scholomance Academy</option>
+							<option value="HOF">**Hall of Fame</option>
+						</select>
+					</fieldset>
 
-    <section class="displayCol">
-      <!-- card img -->
+					<!-- class  -->
+					<fieldset class="classSelect">
+						<label for="classes" class="sr-only">Classes</label>
+						<select name="classes" id="classes">
+							<option value=""></option>
+							<option value="DEMONHUNTER">Demon Hunter</option>
+							<option value="DRUID">Druid</option>
+							<option value="HUNTER">Hunter</option>
+							<option value="MAGE">Mage</option>
+							<option value="NEUTRAL">Neutral</option>
+							<option value="PALADIN">Paladin</option>
+							<option value="PRIEST">Priest</option>
+							<option value="ROGUE">Rogue</option>
+							<option value="SHAMAN">Shaman</option>
+							<option value="WARLOCK">Warloc</option>
+							<option value="WARRIOR">Warrior</option>
+						</select>
+					</fieldset>
 
-      <!-- card information -->
-      <h2>Card Information</h2>
-    </section>
-  </main>
+					<!-- race -->
+					<fieldset class="raceSelect">
+						<label for="race" class="sr-only">Races</label>
+						<select name="race" id="race">
+							<option value=""></option>
+							<option value="BEAST">Beast</option>
+							<option value="DEMON">Demon</option>
+							<option value="DRAGON">Dragon</option>
+							<option value="ELEMENTAL">Elemental</option>
+							<option value="MECH">Mech</option>
+							<option value="MURLOC">Murloc</option>
+							<option value="PIRATE">Pirate</option>
+							<option value="TOTEM">Totem</option>
+							<option value="ALL">*All</option>
+						</select>
+					</fieldset>
 
-  <footer class="selectColumn">
-    <p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron Clemens</a> & <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
-    <p>Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
-  </footer>
+					<!-- type -->
+					<fieldset class="typeSelect">
+						<label for="type" class="sr-only">Type</label>
+						<select name="type" id="type">
+							<option value=""></option>
+							<option value="MINION">Minion</option>
+							<option value="SPELL">Spell</option>
+							<option value="ENCHANTMENT">Enchantment</option>
+							<option value="HERO">Hero</option>
+							<option value="WEAPON">Weapon</option>
+							<!-- hero power -->
+						</select>
+					</fieldset>
 
-  <!-- javascript -->
-  <script src="app.js"></script>
+					<!-- cost -->
+					<fieldset class="costSelect">
+						<label for="cost" class="sr-only">Cost</label>
+						<select name="cost" id="cost">
+							<option value=""></option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10+</option>
+					</fieldset>
+
+					<!-- attack -->
+					<fieldset class="attackSelect">
+						<label for="attack" class="sr-only">Attack</label>
+						<select name="attack" id="attack"></select>
+					</fieldset>
+
+					<!-- health -->
+					<fieldset class="healthSelect">
+						<label for="health" class="sr-only">Health</label>
+						<select name="health" id="health"></select>
+					</fieldset>
+
+					<!-- Search button -->
+					<button type="submit" class="submit">Waiting... <button>
+				</form>
+		</section>
+
+		<!-- main card column -->
+		<section class="cardCol">
+			<!-- cards displayed text -->
+			<p class="cardsTotal">300 cards displayed</p>
+
+			<div class="flexContainer">
+
+				<!-- INJECT HTML FROM JS HERE -->
+					<!-- <div class="cardContainer">
+						<img src="${card.imgurl}" alt="${card.name or card.flavortext}" class="card"> 
+					</div> -->
+			</div>
+		</section>
+
+		<!-- rightmost column -->
+		<section class="displayCol">
+			<!-- card img --> 
+				<!-- <img src="" alt="" class="card"> -->
+
+			<!-- card information -->
+			<h2>Card Information</h2>
+			<div class="detailContainer">
+				<p class="cardId">Card ID:</p>
+				<p class="flavourText">Flavour Text:</p>
+				<p class="artist">Artist:</p>
+				<p class="expansion">Expansion Set:</p>
+				<p class="rarity">Rarity:</p> 
+				<!-- <span>${card.rarity}</span> -->
+				<!-- maybe re-add attack, cost, defense here again for screen readers -->
+			</div>
+			
+			<!-- deck builder STRETCH GOAL -->
+			<!-- add card button -->
+			
+		</section>
+	</main>
+
+	<footer class="selectColumn">
+		<p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron Clemens</a> & <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
+		<p>Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
+	</footer>
+
+	<!-- javascript -->
+	<script src="app.js"></script>
+
 </body>
 </html>
