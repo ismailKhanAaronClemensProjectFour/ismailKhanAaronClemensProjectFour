@@ -1,4 +1,44 @@
 // Select column (leftmost column)
-.selectCol {
-  border: 1px dashed black;
+.leftCol {
+  width: 25%;
+  min-width: 250px;
+  
 }
+
+.selectCol {
+  margin-top: 190px;
+}
+
+form {
+  padding: 20px 0;
+
+  fieldset {
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+  
+    label {
+      padding:5px;
+      position: relative;
+      left: -5px;
+    }
+  
+    select,
+    input {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+
+  button[type="submit"] {
+    padding: 15px;
+    margin-top: 10px;
+    width: 50%;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+  }
+}
+

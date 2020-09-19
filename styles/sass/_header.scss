@@ -1,8 +1,29 @@
 // header 
-.hsLogo {
+header {
   width: 25%;
+  min-width: 250px;
+  text-align: center;
+  padding-bottom: 10px;
+  position:absolute;
+  top: 0;
+  left:0;
+}
+
+
+.hsLogo {
+  width: 90%;
 }
 
 h1 {
   color: Red;
+  // font-size: 2.6rem; @ 1000px
+  font-size: 3.4rem;
+  
+}
+
+// wrapper stopper screen width
+@media (max-width: 1500px) {
+  h1 {
+    @include variableFontSize(26, 1000, 34, 1500);
+  }
 }

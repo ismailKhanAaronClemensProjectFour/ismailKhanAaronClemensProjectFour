@@ -15,16 +15,17 @@
 
 	<title>Hearthstone Card Search Toolkit</title>
 </head>
-<body>
-	<header class="selectCol">
+<body class="wrapper">
+	
+	<header class="leftCol">
 		<!-- Logo and Title -->
 		<img src="./assets/hearthstoneLogo.png" alt="Hearthstone Logo" class="hsLogo">
-		<h1>Hearthstone Card Search Toolkit</h1>
+		<h1>Card Search Toolkit</h1>
 	</header>
 
 	<main>
 		<!-- leftmost column -->
-		<section class="selectCol">
+		<section class="selectCol leftCol">
 			<h2>Card Selection</h2>
 			<!-- form -->
 				<!-- Selection Inputs -->
@@ -32,13 +33,13 @@
 					
 					<!-- name search input-->
 					<fieldset class="nameSelect">
-						<label for="name" class="sr-only">Name</label>
+						<label for="name">Name:</label>
 						<input type="text" class="nameSearch" id="name">
 					</fieldset>
 
 					<!-- set -->
 					<fieldset class="setSelect">
-						<label for="set" class="sr-only">Sets</label>
+						<label for="set">Sets:</label>
 						<select name="set" id="set">
 							<option value=""></option>
 							<option value="CORE">Basic</option>
@@ -70,7 +71,7 @@
 
 					<!-- class  -->
 					<fieldset class="classSelect">
-						<label for="classes" class="sr-only">Classes</label>
+						<label for="classes">Classes:</label>
 						<select name="classes" id="classes">
 							<option value=""></option>
 							<option value="DEMONHUNTER">Demon Hunter</option>
@@ -89,7 +90,7 @@
 
 					<!-- race -->
 					<fieldset class="raceSelect">
-						<label for="race" class="sr-only">Races</label>
+						<label for="race">Races:</label>
 						<select name="race" id="race">
 							<option value=""></option>
 							<option value="BEAST">Beast</option>
@@ -106,7 +107,7 @@
 
 					<!-- type -->
 					<fieldset class="typeSelect">
-						<label for="type" class="sr-only">Type</label>
+						<label for="type">Type:</label>
 						<select name="type" id="type">
 							<option value=""></option>
 							<option value="MINION">Minion</option>
@@ -120,7 +121,7 @@
 
 					<!-- cost -->
 					<fieldset class="costSelect">
-						<label for="cost" class="sr-only">Cost</label>
+						<label for="cost">Cost:</label>
 						<select name="cost" id="cost">
 							<option value=""></option>
 							<option value="0">0</option>
@@ -138,23 +139,23 @@
 
 					<!-- attack -->
 					<fieldset class="attackSelect">
-						<label for="attack" class="sr-only">Attack</label>
+						<label for="attack">Attack:</label>
 						<select name="attack" id="attack"></select>
 					</fieldset>
 
 					<!-- health -->
 					<fieldset class="healthSelect">
-						<label for="health" class="sr-only">Health</label>
+						<label for="health">Health:</label>
 						<select name="health" id="health"></select>
 					</fieldset>
 
 					<!-- Search button -->
-					<button type="submit" class="submit">Waiting... <button>
+					<button type="submit" class="submit">Waiting...</button>
 				</form>
 		</section>
 
 		<!-- main card column -->
-		<section class="cardCol">
+		<section class="displayCol">
 			<!-- cards displayed text -->
 			<p class="cardsTotal">300 cards displayed</p>
 
@@ -168,7 +169,7 @@
 		</section>
 
 		<!-- rightmost column -->
-		<section class="displayCol">
+		<section class="infoCol">
 			<!-- card img --> 
 				<!-- <img src="" alt="" class="card"> -->
 
@@ -190,7 +191,7 @@
 		</section>
 	</main>
 
-	<footer class="selectColumn">
+	<footer class="leftCol">
 		<p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron Clemens</a> & <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
 		<p>Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
 	</footer>

@@ -1,1 +1,6 @@
 // mixins
+
+// variable font size
+@mixin variableFontSize($startFontSize, $startScreenWidth, $endFontSize, $endScreenWidth) {
+    font-size: calc((#{$startFontSize}/10 * 1rem) + (100vw - (#{$startScreenWidth}*1px))*((#{$endFontSize} - #{$startFontSize})/(#{$endScreenWidth} - #{$startScreenWidth})))
+}

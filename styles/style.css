@@ -238,8 +238,15 @@ img {
 }
 
 body {
+  height: 100vh;
   background-color: sandybrown;
   font-size: 2.2rem;
+  position: relative;
+}
+
+main {
+  display: flex;
+  height: 100%;
 }
 
 a {
@@ -270,19 +277,91 @@ form {
 }
 
 .wrapper {
-  max-width: 1280px;
+  max-width: 1350px;
   width: 90%;
   margin: 0 auto;
 }
 
-.hsLogo {
+header {
   width: 25%;
+  min-width: 250px;
+  text-align: center;
+  padding-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hsLogo {
+  width: 90%;
 }
 
 h1 {
   color: Red;
+  font-size: 3.4rem;
+}
+
+@media (max-width: 1500px) {
+  h1 {
+    font-size: calc((26/10 * 1rem) + (100vw - (1000*1px))*((34 - 26)/(1500 - 1000)));
+  }
+}
+
+.leftCol {
+  width: 25%;
+  min-width: 250px;
 }
 
 .selectCol {
-  border: 1px dashed black;
+  margin-top: 190px;
+}
+
+form {
+  padding: 20px 0;
+}
+
+form fieldset {
+  width: 100%;
+  margin: 10px 0;
+  border: none;
+}
+
+form fieldset label {
+  padding: 5px;
+  position: relative;
+  left: -5px;
+}
+
+form fieldset select,
+form fieldset input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+form button[type="submit"] {
+  padding: 15px;
+  margin-top: 10px;
+  width: 50%;
+}
+
+form button[type="submit"]:hover, form button[type="submit"]:focus {
+  cursor: pointer;
+}
+
+.displayCol {
+  flex-grow: 1;
+}
+
+.infoCol {
+  width: 25%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

@@ -1,1 +1,9 @@
 // info column (right most column)
+
+.infoCol {
+    width: 25%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
