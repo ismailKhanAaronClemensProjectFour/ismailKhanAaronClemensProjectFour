@@ -13,6 +13,36 @@ body {
     font-size: 1.6rem;
 }
 
+main {
+    position: relative;
+
+    .cards {
+        // max-width: 60%;
+    }
+
+    .sidebar {
+        // max-width: 20%;
+        width: calc(1350px * 0.2);
+        background: orangered;
+    }
+    @media (max-width: 1500px) {
+        .sidebar {
+            width: calc((90 * 0.2) * 1%);
+        }
+    }
+
+    .mainFlexContainer {
+        display: flex;
+        justify-content: space-between;
+      }
+
+    .cards, 
+    .sidebar {
+    flex: 1 0 auto;
+    }
+}
+
+
 // stripping styles
 a {
     text-decoration: none;
@@ -41,7 +71,6 @@ form {
     margin: 0;
     padding: 0;
 }
-
 
 // wrapper
 .wrapper {

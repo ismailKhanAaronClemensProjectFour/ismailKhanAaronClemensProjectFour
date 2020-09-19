@@ -1,5 +1,13 @@
 // footer
 footer {
-    padding: 0 10px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: fixed;
     bottom: 0;
+    width: 100%;
+    
+    padding: 0 10px 20px 10px;
+    background: firebrick;
 }
+

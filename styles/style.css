@@ -26,7 +26,8 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -44,7 +45,8 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b, strong {
@@ -138,7 +140,8 @@ fieldset {
 }
 
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -156,7 +159,8 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -208,11 +212,13 @@ template {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -223,7 +229,8 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -240,6 +247,37 @@ img {
 body {
   background-color: sandybrown;
   font-size: 1.6rem;
+}
+
+main {
+  position: relative;
+}
+
+main .sidebar {
+  width: calc(1350px * 0.2);
+  background: orangered;
+}
+
+@media (max-width: 1500px) {
+  main .sidebar {
+    width: calc((90 * 0.2) * 1%);
+  }
+}
+
+main .mainFlexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .cards,
+main .sidebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 a {
@@ -279,20 +317,43 @@ form {
 header {
   text-align: center;
   padding: 0 10px;
+  background: firebrick;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
   z-index: 1;
 }
 
-.leftCol {
-  width: calc(1350px * 0.2);
-  position: fixed;
+header .logoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
 }
 
-.hsLogo {
-  width: 100%;
+header .logoContainer .hsLogo {
+  max-height: 50px;
+  overflow: hidden;
 }
 
-h1 {
-  font-size: 2.8rem;
+header .logoContainer h1 {
+  font-size: 2.4rem;
 }
 
 @media (max-width: 1500px) {
@@ -313,11 +374,25 @@ h1 {
 
 .selectCol {
   height: 100%;
-  background: firebrick;
   padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  position: fixed;
+  left: calc((100% - 1350px) / 3);
+}
+
+@media (max-width: 1500px) {
+  .infoCol {
+    width: calc((90 * 0.2)*1%);
+    min-width: 243px;
+    right: 5%;
+  }
 }
 
 form {
@@ -354,29 +429,23 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 
 .displayWrapper {
   width: 60%;
-  max-width: calc(1350px * 0.6);
   margin: 0 auto;
-  padding: 10px 20px;
-}
-
-@media (max-width: 1350px) {
-  .displayWrapper {
-    width: calc(100% - (243px * 2));
-  }
+  padding: 10px 10px;
+  max-width: calc(1350px * 0.6);
 }
 
 .infoCol {
   padding: 0 10px 20px 10px;
-  position: fixed;
   height: 100%;
-  width: calc(1350px * 0.2);
-  position: fixed;
-  bottom: 0;
-  right: calc((100% - 1350px)/2);
-  background: firebrick;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  right: calc((100% - 1350px) / 3);
 }
 
 @media (max-width: 1500px) {
@@ -388,6 +457,19 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 }
 
 footer {
-  padding: 0 10px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
   bottom: 0;
+  width: 100%;
+  padding: 0 10px 20px 10px;
+  background: firebrick;
 }

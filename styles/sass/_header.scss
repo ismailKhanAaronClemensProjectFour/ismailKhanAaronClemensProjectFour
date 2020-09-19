@@ -2,21 +2,31 @@
 header {
   text-align: center;
   padding: 0 10px;
-  z-index: 1;
-}
+  background: firebrick;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.leftCol {
-  width: calc(1350px * 0.2);
-  position: fixed;
-}
-
-.hsLogo {
+  position: sticky;
+  top: 0;
   width: 100%;
-}
+  z-index: 1;
+  
+  .logoContainer {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 400px;
+    
+    .hsLogo {
+      max-height: 50px;
+      overflow: hidden;
+    }
 
-h1 {
-  font-size: 2.8rem;
-
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 }
 
 // wrapper stopper screen width

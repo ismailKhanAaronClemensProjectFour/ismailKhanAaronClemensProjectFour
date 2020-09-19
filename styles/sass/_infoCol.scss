@@ -2,16 +2,13 @@
 
 .infoCol {
     padding: 0 10px 20px 10px;
-    position: fixed;
     height: 100%;
-    width: calc(1350px * 0.2);
-    position: fixed;
-    bottom:0;
-    right: calc((100% - 1350px)/2);
-    background: firebrick;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    // justify-content: flex-end;
+
+    position: fixed;
+    right: calc((100% - 1350px) / 3);  
     
 }
 

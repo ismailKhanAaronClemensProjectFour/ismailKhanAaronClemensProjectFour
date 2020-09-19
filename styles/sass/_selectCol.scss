@@ -1,12 +1,23 @@
 // Select column (leftmost column)
-
 .selectCol {
   height: 100%;
-  background: firebrick;
+  // background: firebrick;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
+  position: fixed;
+
+  position: fixed;
+  left: calc((100% - 1350px) / 3);  
+}
+
+@media (max-width: 1500px) {
+  .infoCol {
+      width: calc((90 * 0.2)*1%);
+      min-width: 243px;
+      right: 5%;
+  }
 }
 
 form {

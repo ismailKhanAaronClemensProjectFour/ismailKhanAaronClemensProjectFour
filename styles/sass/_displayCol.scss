@@ -2,14 +2,9 @@
 
 .displayWrapper {
     width: 60%;
-    max-width: calc(1350px * 0.6);
     margin: 0 auto;
-    padding: 10px 20px;
-}
+    // overflow: hidden;
+    padding: 10px 10px;
+    max-width: calc(1350px * 0.6);
 
-
-@media (max-width: 1350px) {
-    .displayWrapper {
-        width: calc(100% - (243px * 2));
-    }
 }
