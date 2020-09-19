@@ -1,6 +1,15 @@
 // display column (center column)
 
-.displayCol {
-    padding-top: 20px;
-    flex-grow: 1;
+.displayWrapper {
+    width: 60%;
+    max-width: calc(1350px * 0.6);
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+
+@media (max-width: 1350px) {
+    .displayWrapper {
+        width: calc(100% - (243px * 2));
+    }
 }

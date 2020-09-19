@@ -1,18 +1,12 @@
 // Select column (leftmost column)
-.leftCol {
-  width: 25%;
-  min-width: 250px;
-  
-}
 
 .selectCol {
+  height: 100%;
+  background: firebrick;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-
-    h2 {
-      margin-top: 40px;
-    }
+  justify-content: center;
 }
 
 form {

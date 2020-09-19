@@ -1,29 +1,38 @@
 // header 
 header {
-  width: 25%;
-  min-width: 250px;
   text-align: center;
-  padding-bottom: 10px;
-  position:absolute;
-  top: 0;
-  left:0;
+  padding: 0 10px;
+  z-index: 1;
 }
 
+.leftCol {
+  width: calc(1350px * 0.2);
+  position: fixed;
+}
 
 .hsLogo {
-  width: 90%;
+  width: 100%;
 }
 
 h1 {
-  color: Red;
-  // font-size: 2.6rem; @ 1000px
-  font-size: 3.4rem;
-  
+  font-size: 2.8rem;
+
 }
 
 // wrapper stopper screen width
 @media (max-width: 1500px) {
+  .leftCol {
+    width: calc((90 * 0.2)*1%);
+    min-width: 243px;
+  }
+
   h1 {
-    @include variableFontSize(26, 1000, 34, 1500);
+    @include variableFontSize(24, 1350, 28, 1500);
+  }
+}
+
+@media (max-width: 1350px) {
+  h1 {
+    font-size: 2.4rem;
   }
 }
