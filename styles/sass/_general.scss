@@ -11,7 +11,7 @@ img {
 body {
     height: 100vh;
     background-color: sandybrown;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     position: relative;
 }
 
@@ -25,6 +25,7 @@ main {
 // stripping styles
 a {
     text-decoration: none;
+    color: black;
 }
 
 ul {

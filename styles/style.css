@@ -240,7 +240,7 @@ img {
 body {
   height: 100vh;
   background-color: sandybrown;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   position: relative;
 }
 
@@ -251,6 +251,7 @@ main {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -313,11 +314,11 @@ h1 {
 }
 
 .selectCol {
-  margin-top: 190px;
+  margin-top: 220px;
 }
 
 form {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 form fieldset {
@@ -349,10 +350,12 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 }
 
 .displayCol {
+  padding-top: 20px;
   flex-grow: 1;
 }
 
 .infoCol {
+  padding-bottom: 20px;
   width: 25%;
   min-width: 250px;
   display: flex;
@@ -361,6 +364,7 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 }
 
 footer {
+  padding-bottom: 20px;
   position: absolute;
   bottom: 0;
   left: 0;
