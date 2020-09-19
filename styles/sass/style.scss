@@ -1,41 +1,19 @@
 // imports
 @import 'setup';
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+@import 'general';
+@import 'header';
+@import 'selectCol';
+@import 'displayCol';
+@import 'infoCol';
+@import 'footer';
 
-// GENERAL
-html {
-  font-size: 62.5%;
-}
 
-img {
-  width: 100%;
-}
 
-body {
-  background-color: sandybrown;
-}
 
-h1 {
-  color: Red;
-}
 
-.wrapper {
-  max-width: 1280px;
-	width: 90%;
-	margin: 0 auto;
-}
 
-// header --> send to partial scss later
-.hsLogo {
-  width: 25%;
-}
 
-// Select column (leftmost column)
-.selectCol {
-  border: 1px dashed black;
-}
 
-.cardCol {
-  border: 1px dashed black;
-
-  font-size: 30px;
-}

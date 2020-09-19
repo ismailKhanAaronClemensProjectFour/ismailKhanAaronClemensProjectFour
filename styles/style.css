@@ -26,8 +26,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -45,8 +44,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b, strong {
@@ -140,8 +138,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -159,8 +156,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -212,13 +208,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -229,8 +223,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -240,15 +233,40 @@ html {
 }
 
 img {
+  height: auto;
   width: 100%;
 }
 
 body {
   background-color: sandybrown;
+  font-size: 2.2rem;
 }
 
-h1 {
-  color: Red;
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+ul,
+p,
+a,
+section,
+fieldset,
+input,
+button,
+label,
+select,
+option,
+body,
+form {
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -261,11 +279,10 @@ h1 {
   width: 25%;
 }
 
-.selectCol {
-  border: 1px dashed black;
+h1 {
+  color: Red;
 }
 
-.cardCol {
+.selectCol {
   border: 1px dashed black;
-  font-size: 30px;
 }
