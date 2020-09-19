@@ -1,6 +1,12 @@
 // mixins
 
-// variable font size
+////////////////////////
+// variable font size //
+////////////////////////
+
+// font-size = initial font size + (screen growth from initial screen width)*(font change ratio)
+    // >> font-size = initial font size + (current screen width - initial screen width)*(font size change / screen size change)
+    // >> font-size = initial font size + (100vw - initial screen width)*(goal font size - intial font size / goal screen size - initial screen size) 
 @mixin variableFontSize($startFontSize, $startScreenWidth, $endFontSize, $endScreenWidth) {
     font-size: calc((#{$startFontSize}/10 * 1rem) + (100vw - (#{$startScreenWidth}*1px))*((#{$endFontSize} - #{$startFontSize})/(#{$endScreenWidth} - #{$startScreenWidth})))
 }
