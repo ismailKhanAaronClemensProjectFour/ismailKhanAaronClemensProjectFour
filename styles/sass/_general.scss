@@ -14,7 +14,7 @@ body {
 }
 
 main {
-    position: relative;
+    // position: relative;
 
     .cards {
         // max-width: 60%;
@@ -22,24 +22,29 @@ main {
 
     .sidebar {
         // max-width: 20%;
+        
+        height: 100%;
         width: calc(1350px * 0.2);
         background: orangered;
-    }
-    @media (max-width: 1500px) {
-        .sidebar {
-            width: calc((90 * 0.2) * 1%);
-        }
-    }
-
-    .mainFlexContainer {
         display: flex;
-        justify-content: space-between;
-      }
+        flex-direction: column;
+        position: fixed;
+        padding: 10px;
+        top: 70px;
+        // display: none;
 
-    .cards, 
-    .sidebar {
-    flex: 1 0 auto;
     }
+    
+
+    // .mainFlexContainer {
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+
+    // .cards, 
+    // .sidebar {
+    // flex: 1 0 auto;
+    // }
 }
 
 
@@ -77,5 +82,16 @@ form {
     max-width: 1350px;
     width: 90%;
     margin: 0 auto;
+    // border: 1px solid white;
+}
+
+@media (max-width: 1500px) {
+
+    main {
+        .sidebar {
+            width: calc((90 * 0.2) * 1%);
+        }
+    }
+    
 }
 

@@ -1,13 +1,22 @@
 // footer
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
     position: fixed;
     bottom: 0;
     width: 100%;
     
-    padding: 0 10px 20px 10px;
+    padding: 5px 0;
     background: firebrick;
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        
+        p:last-child{
+            margin-left: 6px;
+        }
+    }
 }
 

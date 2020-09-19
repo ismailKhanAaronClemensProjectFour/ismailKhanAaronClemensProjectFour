@@ -26,8 +26,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -45,8 +44,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b, strong {
@@ -140,8 +138,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -159,8 +156,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -212,13 +208,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -229,8 +223,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -249,35 +242,15 @@ body {
   font-size: 1.6rem;
 }
 
-main {
-  position: relative;
-}
-
 main .sidebar {
+  height: 100%;
   width: calc(1350px * 0.2);
   background: orangered;
-}
-
-@media (max-width: 1500px) {
-  main .sidebar {
-    width: calc((90 * 0.2) * 1%);
-  }
-}
-
-main .mainFlexContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-main .cards,
-main .sidebar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex-direction: column;
+  position: fixed;
+  padding: 10px;
+  top: 70px;
 }
 
 a {
@@ -314,37 +287,26 @@ form {
   margin: 0 auto;
 }
 
+@media (max-width: 1500px) {
+  main .sidebar {
+    width: calc((90 * 0.2) * 1%);
+  }
+}
+
 header {
-  text-align: center;
-  padding: 0 10px;
+  padding: 5px 0;
   background: firebrick;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: -webkit-sticky;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1;
 }
 
 header .logoContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 400px;
+  width: 200px;
 }
 
 header .logoContainer .hsLogo {
@@ -352,8 +314,9 @@ header .logoContainer .hsLogo {
   overflow: hidden;
 }
 
-header .logoContainer h1 {
-  font-size: 2.4rem;
+header h1 {
+  font-size: 3.2rem;
+  margin-left: 10px;
 }
 
 @media (max-width: 1500px) {
@@ -369,29 +332,6 @@ header .logoContainer h1 {
 @media (max-width: 1350px) {
   h1 {
     font-size: 2.4rem;
-  }
-}
-
-.selectCol {
-  height: 100%;
-  padding: 0 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: fixed;
-  position: fixed;
-  left: calc((100% - 1350px) / 3);
-}
-
-@media (max-width: 1500px) {
-  .infoCol {
-    width: calc((90 * 0.2)*1%);
-    min-width: 243px;
-    right: 5%;
   }
 }
 
@@ -430,46 +370,36 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 .displayWrapper {
   width: 60%;
   margin: 0 auto;
-  padding: 10px 10px;
-  max-width: calc(1350px * 0.6);
 }
 
-.infoCol {
-  padding: 0 10px 20px 10px;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: fixed;
-  right: calc((100% - 1350px) / 3);
+.cardFlexContainer {
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+main .infoCol {
+  right: calc((100% - 1350px) / 2);
 }
 
 @media (max-width: 1500px) {
-  .infoCol {
-    width: calc((90 * 0.2)*1%);
-    min-width: 243px;
+  main .infoCol {
     right: 5%;
   }
 }
 
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 0 10px 20px 10px;
+  padding: 5px 0;
   background: firebrick;
+}
+
+footer .wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+footer .wrapper p:last-child {
+  margin-left: 6px;
 }

@@ -1,31 +1,32 @@
 // header 
 header {
-  text-align: center;
-  padding: 0 10px;
+  // text-align: center;
+  padding: 5px 0;
   background: firebrick;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  height: 70px;
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1;
+  // z-index: 1;
   
   .logoContainer {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    width: 400px;
+    // display: flex;
+    // justify-content: right;
+    // align-items: center;
+    width: 200px;
     
     .hsLogo {
       max-height: 50px;
       overflow: hidden;
     }
+  }
 
-    h1 {
-      font-size: 2.4rem;
-    }
+  h1 {
+    font-size: 3.2rem;
+    margin-left: 10px;
   }
 }
 
