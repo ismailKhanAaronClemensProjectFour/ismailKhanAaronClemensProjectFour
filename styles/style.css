@@ -314,7 +314,13 @@ h1 {
 }
 
 .selectCol {
-  margin-top: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.selectCol h2 {
+  margin-top: 40px;
 }
 
 form {
