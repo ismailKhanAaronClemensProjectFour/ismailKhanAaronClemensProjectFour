@@ -1,33 +1,53 @@
 // info column (right most column)
 main {
-    .infoCol {
-        width: calc(1665px * 0.25);
-        right: calc((100% - 1665px) / 2); 
-    }
+		.infoCol {
+				width: calc(1665px * 0.25);
+				right: calc((100% - 1665px) / 2); 
+		}
 }
 
 .chosenCard {
-    max-width: 300px;
-    margin: 0 auto 0 auto;
-    border: 3px outset #f2af1b;
-    background: rgba(242, 175, 27, 0.3);
-
-    img {
-        visibility: hidden;
-    }
-    
-    .unhide {
-        visibility: visible;
-    }
+		// max-width: 350px;
+		margin: 0 auto 0 auto;
+		
+		img {
+				visibility: hidden;
+		}
+		
+		.unhide {
+				// border: 3px outset #f2af1b;
+				// background: rgba(242, 175, 27, 0.3);
+				visibility: visible;
+				
+				width: 100%;
+				height: 100%;
+				max-width: 330px;
+				max-height: 330px;
+				
+				object-fit: cover;
+				margin-top: -5px
+		}
 }
 
-
+.detailContainer {
+		padding: 10px 0 10px 5px;
+		background: #281F15;
+		margin-top: -15px;
+		p {
+				// line-height: 1.4;
+				padding-top: 5px;
+				color: #a17412;
+		}
+		span {
+			color: white;
+		}
+}
 
 @media (max-width: 1850px) {
-    main {
-        .infoCol {
-            width: calc((90 * 0.25) * 1%);
-            right: 5%;           
-        }
-    }
+		main {
+				.infoCol {
+						width: calc((90 * 0.25) * 1%);
+						right: 5%;           
+				}
+		}
 }

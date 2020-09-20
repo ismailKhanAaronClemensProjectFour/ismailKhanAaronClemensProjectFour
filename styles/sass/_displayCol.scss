@@ -11,8 +11,9 @@
         align-items: flex-start;
         flex-wrap: wrap;
         // background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/bg_class_selector_tile-ed65a642d775c2c3668e96c52faa5a5689231767befd1e393e09c74e1feb73806abc5a49c9fc8d90255fa4d796baff12886fee91fa1e89e41d7611d11487d878.jpg");
-        background-image: url("/assets/backgroundFrame.webp");
+        background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
         min-height: 100vh;
+        width: 100%;
     
         .cardBox {
             width: calc(100% / 4);
@@ -21,6 +22,12 @@
                 transform: scale(1.1);
             }
         }
+
+        .noCards {
+            padding-top: 75px;
+            padding-left: 20px;
+            color: red;
+            font-size: 3.1rem;
+        }
     }
 }
-

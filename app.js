@@ -192,12 +192,6 @@ app.chooseACard = function() {
     });
 }
 
-// display properties on selected cards
-app.cardProperties = function() {
-
-}
-
-
 // init method
 app.init = function() {
     console.log('initialized'); //////// 1st console log

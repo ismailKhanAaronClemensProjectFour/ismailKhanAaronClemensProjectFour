@@ -268,6 +268,7 @@ main .sidebar {
   padding: 10px;
   top: 60px;
   border: 3px outset #F2AF1B;
+  border-bottom: 5px outset #F2AF1B;
 }
 
 a {
@@ -283,6 +284,7 @@ ol {
 h2 {
   font-family: "Gentium Basic", serif;
   color: white;
+  margin-top: 0;
 }
 
 p,
@@ -408,8 +410,9 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background-image: url("/assets/backgroundFrame.webp");
+  background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
   min-height: 100vh;
+  width: 100%;
 }
 
 .displayWrapper .cardFlexContainer .cardBox {
@@ -421,16 +424,20 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
           transform: scale(1.1);
 }
 
+.displayWrapper .cardFlexContainer .noCards {
+  padding-top: 75px;
+  padding-left: 20px;
+  color: red;
+  font-size: 3.1rem;
+}
+
 main .infoCol {
   width: calc(1665px * 0.25);
   right: calc((100% - 1665px) / 2);
 }
 
 .chosenCard {
-  max-width: 300px;
   margin: 0 auto 0 auto;
-  border: 3px outset #f2af1b;
-  background: rgba(242, 175, 27, 0.3);
 }
 
 .chosenCard img {
@@ -439,6 +446,28 @@ main .infoCol {
 
 .chosenCard .unhide {
   visibility: visible;
+  width: 100%;
+  height: 100%;
+  max-width: 330px;
+  max-height: 330px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: -5px;
+}
+
+.detailContainer {
+  padding: 10px 0 10px 5px;
+  background: #281F15;
+  margin-top: -15px;
+}
+
+.detailContainer p {
+  padding-top: 5px;
+  color: #a17412;
+}
+
+.detailContainer span {
+  color: white;
 }
 
 @media (max-width: 1850px) {
@@ -453,7 +482,7 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 5px 0;
-  background: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
+  background: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
 }
 
 footer .wrapper {

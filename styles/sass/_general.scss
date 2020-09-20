@@ -28,6 +28,7 @@ main {
         padding: 10px;
         top: 60px;
         border: 3px outset #F2AF1B;
+        border-bottom: 5px outset #F2AF1B;
     }
 }
 
@@ -45,6 +46,7 @@ ol {
 h2 {
     font-family: $headingFont;
     color: white;
+    margin-top: 0;
 } 
 
 p,
