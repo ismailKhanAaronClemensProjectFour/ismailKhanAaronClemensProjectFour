@@ -1,27 +1,9 @@
 // Select column (leftmost column)
 main {
   .selectCol {
-    // height: 100%;
-    // background: firebrick;
-    // padding: 10px;
-    // top: 70px;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // position: fixed;
-    // left: calc((100% - 1350px) / 3);  
+    width: calc(1665px * 0.15);
   }
 }
-
-
-// @media (max-width: 1500px) {
-//   .infoCol {
-//       width: calc((90 * 0.2)*1%);
-//       min-width: 243px;
-//       right: 5%;
-//   }
-// }
-
 form {
   padding: 10px 0;
 
@@ -46,12 +28,22 @@ form {
   button[type="submit"] {
     padding: 15px;
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
 
       &:hover,
       &:focus {
         cursor: pointer;
       }
   }
+}
+
+@media (max-width: 1850px) {
+
+  main {
+      .selectCol {
+          width: calc((90 * 0.15) * 1%);
+      }
+  }
+  
 }
 

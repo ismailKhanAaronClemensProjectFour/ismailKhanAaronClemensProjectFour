@@ -1,27 +1,17 @@
 // header 
 header {
-  // text-align: center;
   padding: 5px 0;
   background: firebrick;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 60px;
   position: sticky;
   top: 0;
   width: 100%;
-  // z-index: 1;
   
   .logoContainer {
-    // display: flex;
-    // justify-content: right;
-    // align-items: center;
     width: 200px;
-    
-    .hsLogo {
-      max-height: 50px;
-      overflow: hidden;
-    }
   }
 
   h1 {
@@ -30,20 +20,5 @@ header {
   }
 }
 
-// wrapper stopper screen width
-@media (max-width: 1500px) {
-  .leftCol {
-    width: calc((90 * 0.2)*1%);
-    min-width: 243px;
-  }
 
-  h1 {
-    @include variableFontSize(24, 1350, 28, 1500);
-  }
-}
 
-@media (max-width: 1350px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-}

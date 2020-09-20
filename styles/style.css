@@ -235,6 +235,7 @@ html {
 img {
   height: auto;
   width: 100%;
+  display: block;
 }
 
 body {
@@ -244,13 +245,12 @@ body {
 
 main .sidebar {
   height: 100%;
-  width: calc(1350px * 0.2);
   background: orangered;
   display: flex;
   flex-direction: column;
   position: fixed;
   padding: 10px;
-  top: 70px;
+  top: 60px;
 }
 
 a {
@@ -282,15 +282,9 @@ form {
 }
 
 .wrapper {
-  max-width: 1350px;
+  max-width: 1665px;
   width: 90%;
   margin: 0 auto;
-}
-
-@media (max-width: 1500px) {
-  main .sidebar {
-    width: calc((90 * 0.2) * 1%);
-  }
 }
 
 header {
@@ -299,7 +293,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 60px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -309,30 +303,13 @@ header .logoContainer {
   width: 200px;
 }
 
-header .logoContainer .hsLogo {
-  max-height: 50px;
-  overflow: hidden;
-}
-
 header h1 {
   font-size: 3.2rem;
   margin-left: 10px;
 }
 
-@media (max-width: 1500px) {
-  .leftCol {
-    width: calc((90 * 0.2)*1%);
-    min-width: 243px;
-  }
-  h1 {
-    font-size: calc((24/10 * 1rem) + (100vw - (1350*1px))*((28 - 24)/(1500 - 1350)));
-  }
-}
-
-@media (max-width: 1350px) {
-  h1 {
-    font-size: 2.4rem;
-  }
+main .selectCol {
+  width: calc(1665px * 0.15);
 }
 
 form {
@@ -360,16 +337,22 @@ form fieldset input {
 form button[type="submit"] {
   padding: 15px;
   margin-top: 10px;
-  width: 50%;
+  width: 100%;
 }
 
 form button[type="submit"]:hover, form button[type="submit"]:focus {
   cursor: pointer;
 }
 
+@media (max-width: 1850px) {
+  main .selectCol {
+    width: calc((90 * 0.15) * 1%);
+  }
+}
+
 .displayWrapper {
   width: 60%;
-  margin: 0 auto;
+  margin: 0 0 0 15%;
 }
 
 .cardFlexContainer {
@@ -378,11 +361,13 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 }
 
 main .infoCol {
-  right: calc((100% - 1350px) / 2);
+  width: calc(1665px * 0.25);
+  right: calc((100% - 1665px) / 2);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1850px) {
   main .infoCol {
+    width: calc((90 * 0.25) * 1%);
     right: 5%;
   }
 }
