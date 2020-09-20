@@ -26,8 +26,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -45,8 +44,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b, strong {
@@ -140,8 +138,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -159,8 +156,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -212,13 +208,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -229,8 +223,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -257,13 +250,8 @@ main {
 main .sidebar {
   height: calc(100% - 28.4px - 60px);
   width: calc(1350px * 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -321,13 +309,8 @@ main {
 main .sidebar {
   height: calc(100% - 28.4px - 60px);
   width: calc(1350px * 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -343,15 +326,9 @@ main .sidebar {
 header {
   padding: 5px 0;
   background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 60px;
   position: fixed;
   top: 0;
@@ -432,26 +409,23 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 
 .displayWrapper .cardFlexContainer {
   padding: 70px 10px 38.4px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: flex-start;
+  flex-wrap: wrap;
   background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
   min-height: 100vh;
   width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .displayWrapper .cardFlexContainer .cardBox {
-  width: calc(100% / 4);
+  width: calc(100% / 5);
 }
 
 .displayWrapper .cardFlexContainer .cardBox:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .displayWrapper .cardFlexContainer .noCards {
@@ -459,6 +433,12 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
   padding-left: 20px;
   color: red;
   font-size: 3.1rem;
+}
+
+@media (max-width: 1500px) {
+  .displayWrapper .cardFlexContainer .cardBox {
+    width: calc(100% / 4);
+  }
 }
 
 main .infoCol {
@@ -480,8 +460,7 @@ main .infoCol {
   height: 100%;
   max-width: 330px;
   max-height: 330px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -5px;
 }
 
@@ -516,12 +495,8 @@ footer {
 }
 
 footer .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 footer .wrapper p:last-child {
