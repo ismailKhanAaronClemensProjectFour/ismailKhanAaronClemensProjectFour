@@ -2,6 +2,11 @@
 main {
   .selectCol {
     width: calc(1665px * 0.15);
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 3.2rem;
+    }
   }
 }
 
@@ -48,6 +53,10 @@ form {
   main {
       .selectCol {
           width: calc((90 * 0.15) * 1%);
+
+          h2 {
+            @include variableFontSize(17, 1000, 32, 1850);
+          }
       }
   }
   

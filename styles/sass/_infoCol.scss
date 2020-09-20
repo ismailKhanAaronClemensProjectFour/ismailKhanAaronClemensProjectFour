@@ -11,7 +11,8 @@ main {
     margin: 0 auto 0 auto;
     border: 3px outset #f2af1b;
     background: rgba(242, 175, 27, 0.3);
-
+    position: relative;
+    
     img {
         visibility: hidden;
     }
@@ -19,6 +20,7 @@ main {
     .unhide {
         visibility: visible;
     }
+
 }
 
 

@@ -157,7 +157,8 @@ app.selectedImgCard = function() {
         console.log(this.currentSrc);
         console.log(this);
         const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', this.currentSrc);
-        $('.chosenCard').append(selectedImg);
+        const cropArea = $('<div>').addClass('crop');
+        $('.chosenCard').append(selectedImg, cropArea);
     })
 }
 
@@ -192,10 +193,6 @@ app.chooseACard = function() {
     });
 }
 
-// display properties on selected cards
-app.cardProperties = function() {
-
-}
 
 
 // init method
