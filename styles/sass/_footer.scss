@@ -6,14 +6,15 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    // opacity: .5;
     
     padding: 5px 0;
-    background: firebrick;
+    // background: #681f15;
+    background: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
 
     .wrapper {
         display: flex;
         justify-content: center;
-        
         p:last-child{
             margin-left: 6px;
         }

@@ -26,7 +26,8 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -44,7 +45,8 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b, strong {
@@ -138,7 +140,8 @@ fieldset {
 }
 
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -156,7 +159,8 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -208,11 +212,13 @@ template {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -223,7 +229,8 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -239,15 +246,28 @@ img {
 }
 
 body {
-  background-color: sandybrown;
   font-size: 1.6rem;
+}
+
+main {
+  background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
+  background-attachment: fixed;
+}
+
+main .cards {
+  background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/bg_class_selector_tile-ed65a642d775c2c3668e96c52faa5a5689231767befd1e393e09c74e1feb73806abc5a49c9fc8d90255fa4d796baff12886fee91fa1e89e41d7611d11487d878.jpg");
 }
 
 main .sidebar {
   height: 100%;
-  background: orangered;
+  width: calc(1350px * 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -262,8 +282,19 @@ ul {
   list-style: none;
 }
 
+h2 {
+  font-family: "Gentium Basic", serif;
+  color: white;
+}
+
+p,
+label,
+a {
+  font-family: "Quicksand", sans-serif;
+  color: white;
+}
+
 h1,
-h2,
 h3,
 ul,
 p,
@@ -289,11 +320,18 @@ form {
 
 header {
   padding: 5px 0;
-  background: firebrick;
+  background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 60px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -306,6 +344,8 @@ header .logoContainer {
 header h1 {
   font-size: 3.2rem;
   margin-left: 10px;
+  font-family: "Merienda One", cursive;
+  color: white;
 }
 
 main .selectCol {
@@ -377,12 +417,16 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 5px 0;
-  background: firebrick;
+  background: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
 }
 
 footer .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer .wrapper p:last-child {

@@ -1,7 +1,7 @@
 // header 
 header {
   padding: 5px 0;
-  background: firebrick;
+  background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +17,8 @@ header {
   h1 {
     font-size: 3.2rem;
     margin-left: 10px;
+    font-family: $headerFont;
+    color: white;
   }
 }
 
