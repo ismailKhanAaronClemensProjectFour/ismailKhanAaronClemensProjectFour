@@ -136,7 +136,7 @@ app.displayCards = function() {
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
-            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr('id',`${card.id}`);
+            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
             $('.cardFlexContainer').append(userCard);
         });
     } else {
