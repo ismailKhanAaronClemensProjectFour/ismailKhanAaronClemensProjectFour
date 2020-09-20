@@ -9,15 +9,18 @@ img {
 }
 
 body {
-    background-color: sandybrown;
+    // background-color: sandybrown;
     font-size: 1.6rem;
+    // background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
 }
 
 main {
     // position: relative;
-
+    background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
+    background-attachment: fixed;
     .cards {
         // max-width: 60%;
+        background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/bg_class_selector_tile-ed65a642d775c2c3668e96c52faa5a5689231767befd1e393e09c74e1feb73806abc5a49c9fc8d90255fa4d796baff12886fee91fa1e89e41d7611d11487d878.jpg");
     }
 
     .sidebar {
@@ -25,17 +28,14 @@ main {
         
         height: 100%;
         width: calc(1350px * 0.2);
-        background: orangered;
         display: flex;
         flex-direction: column;
         position: fixed;
         padding: 10px;
         top: 70px;
-        // display: none;
 
+        // background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
     }
-    
-
     // .mainFlexContainer {
     //     display: flex;
     //     justify-content: space-between;
@@ -58,8 +58,19 @@ ul {
     list-style: none;
 }
 
+h2 {
+    font-family: $headingFont;
+    color: white;
+} 
+
+p,
+label,
+a {
+    font-family: $textFont;
+    color: white;
+}
+
 h1,
-h2, 
 h3,
 ul,
 p,
