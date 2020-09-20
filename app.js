@@ -17,6 +17,7 @@ app.userHealth = "";
 
 // general namespace properties
 app.resultsArr = [];
+app.cardsFoundTotal = 0;
 app.apiUrl = 'https://api.hearthstonejson.com/v1/58638/enUS/cards.collectible.json';
 // app.imageUrl = `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`;
 
@@ -65,11 +66,12 @@ app.getSearchValues = function() {
     app.getUserAttack();
     app.getUserHealth();
     console.log(`Search for: name= ${app.userName} set= ${app.userSet} class= ${app.userClass} race = ${app.userRace} type= ${app.userType} cost= ${app.userCost} attack= ${app.userAttack} health= ${app.userHealth}`);
-}
+}    
+
 
 // get user cost - method
 app.getUserCost = function() {
-    if ($('#cost').val() !== "") {
+    if($('#cost').val() !== "") {
         app.userCost = parseInt($('#cost').val());
     } else {
         app.userCost = "";
@@ -116,18 +118,19 @@ app.cardMatch = function(userChoice, selection) {
         } else {
             return(userChoice !== "" ? card[selection] === userChoice : card[selection] === card[selection]);
         }
-
-        
     });
 }
 
 app.displayCards = function() {
     $('.cardFlexContainer').empty();
+    app.cardsFoundTotal = app.resultsArr.length;
+    $('.cardTotal span').text(app.cardsFoundTotal);
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
             const userCard = $('<div>').addClass('cardBox').append(cardImage);
             $('.cardFlexContainer').append(userCard);
+            
         });
     } else {
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
