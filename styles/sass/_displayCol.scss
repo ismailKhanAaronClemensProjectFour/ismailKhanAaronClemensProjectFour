@@ -22,7 +22,8 @@
         .cardBox {
             width: calc(100% / 5);
 
-            &:hover {
+            &:hover,
+            &:focus {
                 transform: scale(1.1);
             }
         }
@@ -39,7 +40,7 @@
 @media (max-width: 1500px) {
 
     .displayWrapper{
-        
+
         .cardFlexContainer {
 
             .cardBox {

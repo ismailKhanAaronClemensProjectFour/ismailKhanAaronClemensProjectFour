@@ -424,7 +424,7 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
   width: calc(100% / 5);
 }
 
-.displayWrapper .cardFlexContainer .cardBox:hover {
+.displayWrapper .cardFlexContainer .cardBox:hover, .displayWrapper .cardFlexContainer .cardBox:focus {
   transform: scale(1.1);
 }
 

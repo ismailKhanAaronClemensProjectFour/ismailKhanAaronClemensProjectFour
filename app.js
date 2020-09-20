@@ -157,8 +157,7 @@ app.selectedImgCard = function() {
         console.log(this.currentSrc);
         console.log(this);
         const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', this.currentSrc);
-        const cropArea = $('<div>').addClass('crop');
-        $('.chosenCard').append(selectedImg, cropArea);
+        $('.chosenCard').append(selectedImg);
     })
 }
 
@@ -192,6 +191,8 @@ app.chooseACard = function() {
         $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
     });
 }
+
+
 
 // init method
 app.init = function() {
