@@ -53,11 +53,12 @@ app.getUserCards = function() {
 // rest the results array - method
 app.reset = function() {
     app.resultsArr = app.allCards;
+    $('.name')
 }
 
 // get user search values - method
 app.getSearchValues = function() {
-    app.userName = $('input.nameSearch').val();
+    app.userName = $('#name').val();
     app.userSet = $('#set').val();
     app.userClass = $('#classes').val();
     app.userRace = $('#race').val();
@@ -74,35 +75,35 @@ app.getUserCost = function() {
     if($('#cost').val() !== "") {
         app.userCost = parseInt($('#cost').val());
     } else {
-        app.userCost = "";
+        app.userCost = $('#cost').val();
     }
 }
 
 // get user attack - method
 app.getUserAttack = function() {
-    if($('#attack').val() !== "") {
+    if($('#attack').val() !== "" && $('#attack').val() !== "None") {
         app.userAttack = parseInt($('#attack').val());
     } else {
-        app.userAttack = "";
+        app.userAttack = $('#attack').val();
     }
 }
 
 // get user health - method
 app.getUserHealth = function() {
-    if($('#health').val() !== "") {
+    if($('#health').val() !== "" && $('#health').val() !== "None") {
         app.userHealth = parseInt($('#health').val());
     } else {
-        app.userHealth = "";
+        app.userHealth = $('#health').val();
     }
 }
 
 // search for user cards -method
 app.searchCards = function() {
-    // app.nameMatch();
     app.cardMatch(app.userName, 'name');
     app.cardMatch(app.userSet, 'set');
     app.cardMatch(app.userClass, 'cardClass');
     app.cardMatch(app.userRace, 'race');
+    app.cardMatch(app.userType, 'type');
     app.cardMatch(app.userCost, 'cost');
     app.cardMatch(app.userAttack, 'attack');
     app.cardMatch(app.userHealth, 'health');
@@ -115,6 +116,8 @@ app.cardMatch = function(userChoice, selection) {
 
         if (userChoice === 10) {
             return card[selection] >= 10;
+        } else if (userChoice === "None") {
+            return card.hasOwnProperty(selection) === false;
         } else {
             return(userChoice !== "" ? card[selection] === userChoice : card[selection] === card[selection]);
         }

@@ -330,6 +330,11 @@ main .selectCol {
   width: calc(1665px * 0.15);
 }
 
+.cardTotal span {
+  display: inline-block;
+  width: 36px;
+}
+
 form {
   padding: 10px 0;
 }
