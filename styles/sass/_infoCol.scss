@@ -8,20 +8,26 @@ main {
 
 .chosenCard {
     max-width: 300px;
-    margin: 10px auto 0 auto;
-    border: 2px outset #5095E9;
-    background: rgba(100, 195, 252, 0.5);
+    margin: 0 auto 0 auto;
+    border: 3px outset #f2af1b;
+    background: rgba(242, 175, 27, 0.3);
+
+    img {
+        visibility: hidden;
+    }
+    
+    .unhide {
+        visibility: visible;
+    }
 }
+
 
 
 @media (max-width: 1850px) {
     main {
         .infoCol {
             width: calc((90 * 0.25) * 1%);
-            right: 5%;
-
-            
+            right: 5%;           
         }
     }
-    
 }

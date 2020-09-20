@@ -26,7 +26,8 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -44,7 +45,8 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b, strong {
@@ -138,7 +140,8 @@ fieldset {
 }
 
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -156,7 +159,8 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -208,11 +212,13 @@ template {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -223,7 +229,8 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -243,15 +250,20 @@ body {
 }
 
 main {
-  background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
+  background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
   background-attachment: fixed;
 }
 
 main .sidebar {
   height: calc(100% - 28.4px - 60px);
   width: calc(1350px * 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -307,13 +319,20 @@ form {
 header {
   padding: 5px 0;
   background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 60px;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 header .logoContainer {
@@ -381,10 +400,15 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 
 .displayWrapper .cardFlexContainer {
   padding: 70px 10px 38.4px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/bg_class_selector_tile-ed65a642d775c2c3668e96c52faa5a5689231767befd1e393e09c74e1feb73806abc5a49c9fc8d90255fa4d796baff12886fee91fa1e89e41d7611d11487d878.jpg");
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-image: url("/assets/backgroundFrame.webp");
   min-height: 100vh;
 }
 
@@ -393,7 +417,8 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 }
 
 .displayWrapper .cardFlexContainer .cardBox:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 main .infoCol {
@@ -403,9 +428,17 @@ main .infoCol {
 
 .chosenCard {
   max-width: 300px;
-  margin: 10px auto 0 auto;
-  border: 2px outset #5095E9;
-  background: rgba(100, 195, 252, 0.5);
+  margin: 0 auto 0 auto;
+  border: 3px outset #f2af1b;
+  background: rgba(242, 175, 27, 0.3);
+}
+
+.chosenCard img {
+  visibility: hidden;
+}
+
+.chosenCard .unhide {
+  visibility: visible;
 }
 
 @media (max-width: 1850px) {
@@ -424,8 +457,12 @@ footer {
 }
 
 footer .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer .wrapper p:last-child {

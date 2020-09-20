@@ -135,7 +135,7 @@ app.displayCards = function() {
     app.updateForm();
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
-            const cardImage = $('<img>').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
+            const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
             const userCard = $('<li>').addClass('cardBox').append(cardImage).attr('id',`${card.id}`);
             $('.cardFlexContainer').append(userCard);
         });
@@ -143,6 +143,22 @@ app.displayCards = function() {
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
         $('.cardFlexContainer').append(noCardsMessage);
     }
+
+    app.selectedImgCard();
+}
+
+// on click of card in display results, show clicked card in the infoCol
+app.selectedImgCard = function() {
+    // display image in chosenImg area
+    $('.cardImg').click(function(){
+        // empty previous card
+        $('.chosenCard').empty();
+        // const chosenImg = $('img').addClass('chosenImg').attr('src', this);
+        console.log(this.currentSrc);
+        console.log(this);
+        const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', this.currentSrc);
+        $('.chosenCard').append(selectedImg);
+    })
 }
 
 app.updateForm = function() {
@@ -159,8 +175,28 @@ app.chooseACard = function() {
             return card.id === userCardId;
         });
         console.log(app.userCard);
+        
+        // display properties
+        const cardName = $('#cardName').text(app.userCard.name);
+        const cardCost = $('#cardCost').text(app.userCard.cost);
+        const cardAttack = $('#cardAttack').text(app.userCard.attack);
+        const cardHealth = $('#cardHealth').text(app.userCard.health);
+        const type = $('#cardType').text(app.userCard.type);
+        const rarity = $('#rarity').text(app.userCard.rarity);
+        const xpac = $('#xpac').text(app.userCard.set);
+        const cardID = $('#id').text(app.userCard.id);
+        const artist = $('#artist').text(app.userCard.artist);
+        const flavour = $('#flavour').text(app.userCard.flavor);
+
+        $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
     });
 }
+
+// display properties on selected cards
+app.cardProperties = function() {
+
+}
+
 
 // init method
 app.init = function() {
