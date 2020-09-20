@@ -15,6 +15,9 @@ app.userCost = "";
 app.userAttack = "";
 app.userHealth = "";
 
+// user single card chosen
+app.userCard = {};
+
 // general namespace properties
 app.resultsArr = [];
 app.cardsFoundTotal = 0;
@@ -49,6 +52,7 @@ app.getUserCards = function() {
         app.getSearchValues();
         app.searchCards();
         app.displayCards();
+        app.chooseACard();
         e.preventDefault();
     })
 }
@@ -132,9 +136,8 @@ app.displayCards = function() {
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
-            const userCard = $('<div>').addClass('cardBox').append(cardImage);
+            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr('id',`${card.id}`);
             $('.cardFlexContainer').append(userCard);
-            
         });
     } else {
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
@@ -146,6 +149,17 @@ app.updateForm = function() {
     app.cardsFoundTotal = app.resultsArr.length;
     $('.cardTotal span').text(app.cardsFoundTotal);
     $('#name').val("");
+}
+
+app.chooseACard = function() {
+    $('.cardFlexContainer').on('click','li', function() {
+        const userCardId = $(this).attr('id')
+        console.log(userCardId);
+        app.userCard = app.resultsArr.find(function(card){
+            return card.id === userCardId;
+        });
+        console.log(app.userCard);
+    });
 }
 
 // init method

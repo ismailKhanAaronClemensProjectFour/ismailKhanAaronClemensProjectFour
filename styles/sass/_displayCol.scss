@@ -8,12 +8,17 @@
         padding:70px 10px 38.4px 10px;
         // margin: 0 0 30px 0;
         display: flex;
+        align-items: flex-start;
         flex-wrap: wrap;
         background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/bg_class_selector_tile-ed65a642d775c2c3668e96c52faa5a5689231767befd1e393e09c74e1feb73806abc5a49c9fc8d90255fa4d796baff12886fee91fa1e89e41d7611d11487d878.jpg");
         min-height: 100vh;
     
         .cardBox {
             width: calc(100% / 4);
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 }
