@@ -31,7 +31,10 @@ app.requestAllCards = $.ajax({
 // get all cards from api - method
 app.getAllCards = function() {
     app.requestAllCards.then(function(response) {
-        app.allCards = response;
+        // set allCards array to all cards minus the cards with set= HERO_SKINS, these cards are unwanted for this project
+        app.allCards = response.filter(function(card) {
+            return card.set !== "HERO_SKINS";
+        });
         app.resultsArr = app.allCards;
         console.log('all the cards', app.resultsArr); //////// 2nd console log
         $('button[type=submit]').text('Search');
@@ -53,7 +56,6 @@ app.getUserCards = function() {
 // rest the results array - method
 app.reset = function() {
     app.resultsArr = app.allCards;
-    $('.name')
 }
 
 // get user search values - method
@@ -126,8 +128,7 @@ app.cardMatch = function(userChoice, selection) {
 
 app.displayCards = function() {
     $('.cardFlexContainer').empty();
-    app.cardsFoundTotal = app.resultsArr.length;
-    $('.cardTotal span').text(app.cardsFoundTotal);
+    app.updateForm();
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
@@ -139,6 +140,12 @@ app.displayCards = function() {
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
         $('.cardFlexContainer').append(noCardsMessage);
     }
+}
+
+app.updateForm = function() {
+    app.cardsFoundTotal = app.resultsArr.length;
+    $('.cardTotal span').text(app.cardsFoundTotal);
+    $('#name').val("");
 }
 
 // init method
