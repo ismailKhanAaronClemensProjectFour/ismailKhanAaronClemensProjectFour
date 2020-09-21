@@ -30,16 +30,18 @@ main {
 }
 
 .detailContainer {
-		padding: 10px 0 10px 5px;
-		background: #281F15;
+		padding: 5px 0 10px 7px;
+		background: $borderBackground;
+		border-radius: 1rem;
 		margin-top: -15px;
+
 		p {
 				// line-height: 1.4;
-				padding-top: 5px;
-				color: #a17412;
+				padding-top: 7px;
+				color: $heading;
 		}
 		span {
-			color: white;
+			color: $propertyText;
 		}
 }
 

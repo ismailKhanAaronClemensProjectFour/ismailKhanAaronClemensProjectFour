@@ -184,12 +184,19 @@ app.chooseACard = function() {
         const cardHealth = $('#cardHealth').text(app.userCard.health);
         const type = $('#cardType').text(app.userCard.type);
         const rarity = $('#rarity').text(app.userCard.rarity);
-        const xpac = $('#xpac').text(app.userCard.set);
+        const xpac = $('#xpac').text(app.userCard.set).attr('src', "");
         const cardID = $('#id').text(app.userCard.id);
         const artist = $('#artist').text(app.userCard.artist);
         const flavour = $('#flavour').text(app.userCard.flavor);
 
         $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
+    });
+}
+
+// apply gem icon for each type of rarity 
+app.rarityCheck = function() {
+    app.resultsArr.find(function(card){
+        return card.id === userCardId;
     });
 }
 

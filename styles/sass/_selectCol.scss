@@ -1,64 +1,93 @@
 // Select column (leftmost column)
 main {
-  .selectCol {
-    width: calc(1665px * 0.15);
+	.selectCol {
+		width: calc(1665px * 0.15);
 
-    h2 {
-      margin-bottom: 20px;
-      font-size: 3.2rem;
-    }
-  }
+		h2 {
+			margin-bottom: 20px;
+			font-size: 3.2rem;
+		}
+	}
 }
 
-.cardTotal span {
-  display: inline-block;
-  width: 36px;
+.cardTotal {
+	font-size: 1.9rem;
+	span {
+		display: inline-block;
+		width: 36px;
+	}
+}
+
+.nameSelect {
+	margin-top: 0;
 }
 
 form {
-  padding: 10px 0;
+	padding: 10px 0;
 
-  fieldset {
-    width: 100%;
-    margin: 10px 0;
-    border: none;
-  
-    label {
-      padding:5px;
-      position: relative;
-      left: -5px;
-    }
-  
-    select,
-    input {
-      width: 100%;
-      margin-top: 5px;
-    }
-  }
+	fieldset {
+		width: 100%;
+		margin: 10px 0;
+		border: none;
+	
+		label {
+			padding: 5px;
+			position: relative;
+			left: -5px;
+			// display: none;
+		}
 
-  button[type="submit"] {
-    padding: 15px;
-    margin-top: 10px;
-    width: 100%;
+		select,
+		input {
+			width: 100%;
+			margin-top: 5px;
+			padding: 1px;
+		}
 
-      &:hover,
-      &:focus {
-        cursor: pointer;
-      }
-  }
+		input {
+			padding-left: 5px;
+		}
+		select {
+			cursor: pointer;
+		}
+	}
+
+	button[type="submit"] {
+		padding: 15px;
+		margin-top: 10px;
+		width: 100%;
+		font-size: 1.8rem;
+
+			&:hover,
+			&:focus {
+				cursor: pointer;
+			}
+	}
+
+	select, 
+	input, 
+	button[type="submit"] {
+		font-family: $textFont;
+		border-radius: 1rem;
+		background-color: $borderBackground;
+		border-color: $borderBackground;
+		color: $border;
+
+		&:focus {
+			outline: 1px dotted $border;
+		}
+	}
 }
 
 @media (max-width: 1850px) {
+	main {
+		.selectCol {
+			width: calc((90 * 0.15) * 1%);
 
-  main {
-      .selectCol {
-          width: calc((90 * 0.15) * 1%);
-
-          h2 {
-            @include variableFontSize(17, 1000, 32, 1850);
-          }
-      }
-  }
-  
+			h2 {
+				@include variableFontSize(17, 1000, 32, 1850);
+			}
+	}
+}
 }
 

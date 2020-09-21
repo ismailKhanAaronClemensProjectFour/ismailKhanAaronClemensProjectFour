@@ -14,11 +14,9 @@ body {
 }
 
 main {
-    // background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
     background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
     background-attachment: fixed;
     
-
     .sidebar {
         height: calc(100% - 28.4px - 60px);
         width: calc(1350px * 0.2);
@@ -35,7 +33,7 @@ main {
 // stripping styles
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
 ul,
@@ -45,7 +43,7 @@ ol {
 
 h2 {
     font-family: $headingFont;
-    color: white;
+    color: $propertyText;
     margin-top: 0;
 } 
 
@@ -53,7 +51,7 @@ p,
 label,
 a {
     font-family: $textFont;
-    color: white;
+    color: $propertyText;
 }
 
 h1,
@@ -74,26 +72,6 @@ form {
     margin: 0;
     padding: 0;
 }
-
-
-main {
-    // background-image: url("http://hearthstone.cmrabet.com/7838fb7ac2e75cc52275d530c1ad1140.png");
-    background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
-    background-attachment: fixed;
-    
-
-    .sidebar {
-        height: calc(100% - 28.4px - 60px);
-        width: calc(1350px * 0.2);
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        padding: 10px;
-        top: 60px;
-        border: 3px outset #F2AF1B;
-    }
-}
-
 
 // wrapper
 .wrapper {
