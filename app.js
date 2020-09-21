@@ -187,12 +187,28 @@ app.displayCardProperties = function(url) {
     $('span').append(flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
 }
 
+app.windowResize = function() {
+    $(window).on('resize', function() {
+        if ($(window).innerWidth() <= 768) {
+            $('label').addClass('sr-only');
+        }
+    })
+}
+
+app.onLoad = function() {
+    if($(window).innerWidth() <= 768) {
+        $('label').addClass('sr-only');
+    }
+}
+
 // init method
 app.init = function() {
     console.log('initialized'); //////// 1st console log
     // OUR CODE HERE
+    app.onLoad();
     app.getAllCards();
     app.chooseACard();
+    app.windowResize();
 }
 
 // document ready
