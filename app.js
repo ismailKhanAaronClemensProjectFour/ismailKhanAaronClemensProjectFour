@@ -203,7 +203,6 @@ app.updateSetName = function() {
         const xpac = $('#xpac').text(app.setName[0]);
 }
 
-
 // init method
 app.init = function() {
     console.log('initialized'); //////// 1st console log

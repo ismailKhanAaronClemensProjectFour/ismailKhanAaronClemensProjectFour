@@ -470,6 +470,14 @@ main .infoCol {
   margin-top: -15px;
 }
 
+.detailContainer .cardValues {
+  display: flex;
+}
+
+.detailContainer .cardValues p {
+  width: calc(100% / 3);
+}
+
 .detailContainer p {
   padding-top: 5px;
   color: #a17412;
