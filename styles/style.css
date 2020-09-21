@@ -415,7 +415,8 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 
 form select,
 form input,
-form button[type="submit"] {
+form button[type="submit"],
+form li {
   font-family: "Quicksand", sans-serif;
   border-radius: 1rem;
   background-color: #281f15;
@@ -425,7 +426,8 @@ form button[type="submit"] {
 
 form select:focus,
 form input:focus,
-form button[type="submit"]:focus {
+form button[type="submit"]:focus,
+form li:focus {
   outline: 1px dotted #EAC435;
 }
 
@@ -448,9 +450,8 @@ form button[type="submit"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
@@ -466,6 +467,10 @@ form button[type="submit"]:focus {
 
 .displayWrapper .cardFlexContainer .cardBox {
   width: calc(100% / 5);
+}
+
+.displayWrapper .cardFlexContainer .cardBox:focus {
+  outline: 2px dotted #EAC435;
 }
 
 .displayWrapper .cardFlexContainer .cardBox:hover, .displayWrapper .cardFlexContainer .cardBox:focus {
@@ -507,14 +512,14 @@ main .infoCol {
   max-height: 330px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: -5px;
+  margin-top: -15px;
 }
 
 .detailContainer {
   padding: 5px 0 10px 7px;
   background: #281f15;
   border-radius: 1rem;
-  margin-top: -15px;
+  margin-top: -35px;
 }
 
 .detailContainer p {

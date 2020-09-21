@@ -25,15 +25,20 @@ main {
 				max-height: 330px;
 				
 				object-fit: cover;
-				margin-top: -5px
+				margin-top: -15px;
 		}
 }
+
+// .styleProp span {
+// 	text-transform: lowercase;
+// 	text-transform: capitalize;
+// }
 
 .detailContainer {
 		padding: 5px 0 10px 7px;
 		background: $borderBackground;
 		border-radius: 1rem;
-		margin-top: -15px;
+		margin-top: -35px;
 
 		p {
 				// line-height: 1.4;

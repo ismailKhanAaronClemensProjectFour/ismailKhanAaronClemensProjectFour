@@ -1,3 +1,4 @@
+// globals
 let $userCost= $('#cost');
 
 // namespace
@@ -50,7 +51,6 @@ app.getUserCards = function() {
         app.getSearchValues();
         app.searchCards();
         app.displayCards();
-        app.chooseACard();
         e.preventDefault();
     })
 }
@@ -73,32 +73,25 @@ app.getSearchValues = function() {
     console.log(`Search for: name= ${app.userName} set= ${app.userSet} class= ${app.userClass} race = ${app.userRace} type= ${app.userType} cost= ${app.userCost} attack= ${app.userAttack} health= ${app.userHealth}`);
 }    
 
-
 // get user cost - method
 app.getUserCost = function() {
-    if($('#cost').val() !== "") {
-        app.userCost = parseInt($('#cost').val());
-    } else {
-        app.userCost = $('#cost').val();
-    }
+    return ($('#cost').val() !== "" ? app.userCost = parseInt($('#cost').val()) : app.userCost = $('#cost').val());
 }
 
 // get user attack - method
 app.getUserAttack = function() {
-    if($('#attack').val() !== "" && $('#attack').val() !== "None") {
-        app.userAttack = parseInt($('#attack').val());
-    } else {
-        app.userAttack = $('#attack').val();
-    }
+    return ($('#attack').val() !== "" && $('#attack').val() !== "None" ? app.userAttack = parseInt($('#attack').val()) : app.userAttack = $('#attack').val());
 }
-
+ 
 // get user health - method
 app.getUserHealth = function() {
-    if($('#health').val() !== "" && $('#health').val() !== "None") {
-        app.userHealth = parseInt($('#health').val());
-    } else {
-        app.userHealth = $('#health').val();
-    }
+    // if($('#health').val() !== "" && $('#health').val() !== "None") {
+    //     app.userHealth = parseInt($('#health').val());
+    // } else {
+    //     app.userHealth = $('#health').val();
+    // }
+
+    return ($('#health').val() !== "" && $('#health').val() !== "None" ? app.userHealth = parseInt($('#health').val()) : app.userHealth = $('#health').val());
 }
 
 // search for user cards -method
@@ -130,6 +123,7 @@ app.cardMatch = function(userChoice, selection) {
 app.displayCards = function() {
     $('.cardFlexContainer').empty();
     app.updateForm();
+    
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
@@ -140,22 +134,6 @@ app.displayCards = function() {
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
         $('.cardFlexContainer').append(noCardsMessage);
     }
-
-    app.selectedImgCard();
-}
-
-// on click of card in display results, show clicked card in the infoCol
-app.selectedImgCard = function() {
-    // display image in chosenImg area
-    $('.cardImg').click(function(){
-        // empty previous card
-        $('.chosenCard').empty();
-        // const chosenImg = $('img').addClass('chosenImg').attr('src', this);
-        console.log(this.currentSrc);
-        console.log(this);
-        const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', this.currentSrc);
-        $('.chosenCard').append(selectedImg);
-    })
 }
 
 app.updateForm = function() {
@@ -164,32 +142,40 @@ app.updateForm = function() {
     $('#name').val("");
 }
 
+// on click of card in display results, show clicked card in the infoCol
 app.chooseACard = function() {
     $('.cardFlexContainer').on('click','li', function() {
-        const userCardId = $(this).attr('id')
-        console.log(userCardId);
+        $('.chosenCard').empty();
+
+        const userCardId = $(this).attr('id');
+        const userCardUrl = `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${userCardId}.png`;
+        
         app.userCard = app.resultsArr.find(function(card){
             return card.id === userCardId;
         });
-        console.log(app.userCard);
         
-        // display properties
-        const cardName = $('#cardName').text(app.userCard.name);
-        const cardCost = $('#cardCost').text(app.userCard.cost);
-        const cardAttack = $('#cardAttack').text(app.userCard.attack);
-        const cardHealth = $('#cardHealth').text(app.userCard.health);
-        const type = $('#cardType').text(app.userCard.type);
-        const rarity = $('#rarity').text(app.userCard.rarity);
         app.updateSetName();
-        const cardID = $('#id').text(app.userCard.id);
-        const artist = $('#artist').text(app.userCard.artist);
-        const flavour = $('#flavour').text(app.userCard.flavor);
-
-        $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
+        app.displayCardProperties(userCardUrl);
     });
 }
 
-// apply gem icon for each type of rarity 
+app.displayCardProperties = function(url) {
+    // display properties
+    const cardName = $('#cardName').text(app.userCard.name);
+    const cardCost = $('#cardCost').text(app.userCard.cost);
+    const cardAttack = $('#cardAttack').text(app.userCard.attack);
+    const cardHealth = $('#cardHealth').text(app.userCard.health);
+    const type = $('#cardType').text(app.userCard.type);
+    const rarity = $('#rarity').text(app.userCard.rarity);
+    const cardID = $('#id').text(app.userCard.id);
+    const artist = $('#artist').text(app.userCard.artist);
+    const flavour = $('#flavour').text(app.userCard.flavor);
+
+    const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', url);
+    $('.chosenCard').append(selectedImg);
+
+    $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
+}
 
 // update set name 
 app.updateSetName = function() {
@@ -207,6 +193,7 @@ app.init = function() {
     console.log('initialized'); //////// 1st console log
     // OUR CODE HERE
     app.getAllCards();
+    app.chooseACard();
 }
 
 // document ready
