@@ -2,6 +2,8 @@
 const $userCost = $('#cost');
 const $userAttack = $('#attack');
 const $userHealth = $('#health');
+const $searchButton = $('button[type=submit]');
+const $cardsFound = $('.cardTotal span');
 
 // namespace
 const app = {};
@@ -40,7 +42,7 @@ app.getAllCards = function() {
         });
         app.resultsArr = app.allCards;
         console.log('all the cards', app.resultsArr); //////// 2nd console log
-        $('button[type=submit]').text('Search');
+        $searchButton.text('Search');
         app.getUserCards();
     });
 }
@@ -106,17 +108,22 @@ app.cardMatch = function(userChoice, selection) {
     });
 }
 
+// display all cards in resultsArr to page, or disply no cards found message
 app.displayCards = function() {
+    // start by emptying display area from previous results
     $('.cardFlexContainer').empty();
     app.updateForm();
     
     if (app.resultsArr.length !== 0) {
+        // cards found in results array
+        // loop through each card and display it to page
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
             const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
             $('.cardFlexContainer').append(userCard);
         });
     } else {
+        // no cards found in results array
         const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
         $('.cardFlexContainer').append(noCardsMessage);
     }
@@ -125,10 +132,11 @@ app.displayCards = function() {
 app.updateForm = function() {
     // update number of cards found to page
     app.cardsFoundTotal = app.resultsArr.length;
-    $('.cardTotal span').text(app.cardsFoundTotal);
+    $cardsFound.text(app.cardsFoundTotal);
     // update name search box
     $('#name').val("");
 }
+
 
 // on click of card in display results, show clicked card in the infoCol
 app.chooseACard = function() {
@@ -176,7 +184,7 @@ app.displayCardProperties = function(url) {
     // display image of single selected card
     const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', url);
     $('.chosenCard').append(selectedImg);
-    $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
+    $('span').append(flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
 }
 
 // init method
