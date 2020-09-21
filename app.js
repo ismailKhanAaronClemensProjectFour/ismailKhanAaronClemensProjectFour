@@ -123,56 +123,61 @@ app.displayCards = function() {
 }
 
 app.updateForm = function() {
+    // update number of cards found to page
     app.cardsFoundTotal = app.resultsArr.length;
     $('.cardTotal span').text(app.cardsFoundTotal);
+    // update name search box
     $('#name').val("");
 }
 
 // on click of card in display results, show clicked card in the infoCol
 app.chooseACard = function() {
     $('.cardFlexContainer').on('click','li', function() {
+        // empty out any previous selected card images
         $('.chosenCard').empty();
-
+        // get the card id of the selected card
         const userCardId = $(this).attr('id');
+        // using card id of selected card get the corresponding imag url
         const userCardUrl = `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${userCardId}.png`;
-        
+        // find the selected card object in the results array based on its card id
         app.userCard = app.resultsArr.find(function(card){
             return card.id === userCardId;
         });
-        
         app.updateSetName();
+        // display details of card and its image (userCardUrl)
         app.displayCardProperties(userCardUrl);
     });
 }
 
+// update set name from api set name to Hearthstone proper set names (the text in the #set option tags)
+app.updateSetName = function() {
+    app.setName = []
+    // loop across jquery <select> object, find the <option> that has its value === value of single card user selected
+    // get that option tag's text and push it into app.setName array, there will only ever be one match to push
+    $('#set option').each(function(){
+        if ($(this).val() === app.userCard.set) {
+            app.setName.push($(this).text());
+        }
+    });
+};
+
 app.displayCardProperties = function(url) {
-    // display properties
+    // display properties of single selected card
     const cardName = $('#cardName').text(app.userCard.name);
     const cardCost = $('#cardCost').text(app.userCard.cost);
     const cardAttack = $('#cardAttack').text(app.userCard.attack);
     const cardHealth = $('#cardHealth').text(app.userCard.health);
     const type = $('#cardType').text(app.userCard.type);
     const rarity = $('#rarity').text(app.userCard.rarity);
-    const cardID = $('#id').text(app.userCard.id);
+    const xpac = $('#xpac').text(app.setName[0]);
     const artist = $('#artist').text(app.userCard.artist);
     const flavour = $('#flavour').text(app.userCard.flavor);
 
+    // display image of single selected card
     const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', url);
     $('.chosenCard').append(selectedImg);
-
     $('span').append(cardID, flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
 }
-
-// update set name 
-app.updateSetName = function() {
-    app.setName = []
-    $('#set option').each(function(){
-        if ($(this).val() === app.userCard.set) {
-            app.setName.push($(this).text());
-        }
-    });
-    const xpac = $('#xpac').text(app.setName[0]);
-};
 
 // init method
 app.init = function() {
