@@ -1,5 +1,7 @@
-// globals
-let $userCost= $('#cost');
+// cached selectors
+const $userCost = $('#cost');
+const $userAttack = $('#attack');
+const $userHealth = $('#health');
 
 // namespace
 const app = {};
@@ -21,7 +23,6 @@ app.userCard = {};
 app.resultsArr = [];
 app.cardsFoundTotal = 0;
 app.apiUrl = 'https://api.hearthstonejson.com/v1/58638/enUS/cards.collectible.json';
-// app.imageUrl = `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`;
 
 // ajax request saved in namespace
 app.requestAllCards = $.ajax({
@@ -67,31 +68,16 @@ app.getSearchValues = function() {
     app.userClass = $('#classes').val();
     app.userRace = $('#race').val();
     app.userType = $('#type').val();
-    app.getUserCost();
-    app.getUserAttack();
-    app.getUserHealth();
+    app.userCost = app.getUserInt($userCost);
+    app.userAttack = app.getUserInt($userAttack);
+    app.userHealth = app.getUserInt($userHealth);
     console.log(`Search for: name= ${app.userName} set= ${app.userSet} class= ${app.userClass} race = ${app.userRace} type= ${app.userType} cost= ${app.userCost} attack= ${app.userAttack} health= ${app.userHealth}`);
 }    
 
-// get user cost - method
-app.getUserCost = function() {
-    return ($('#cost').val() !== "" ? app.userCost = parseInt($('#cost').val()) : app.userCost = $('#cost').val());
-}
-
-// get user attack - method
-app.getUserAttack = function() {
-    return ($('#attack').val() !== "" && $('#attack').val() !== "None" ? app.userAttack = parseInt($('#attack').val()) : app.userAttack = $('#attack').val());
-}
- 
-// get user health - method
-app.getUserHealth = function() {
-    // if($('#health').val() !== "" && $('#health').val() !== "None") {
-    //     app.userHealth = parseInt($('#health').val());
-    // } else {
-    //     app.userHealth = $('#health').val();
-    // }
-
-    return ($('#health').val() !== "" && $('#health').val() !== "None" ? app.userHealth = parseInt($('#health').val()) : app.userHealth = $('#health').val());
+// if userSelect is a number, parseInt, else keep the "" or "None" value
+app.getUserInt = function(selection) {
+    const selectVal = $(selection).val();
+    return(selectVal !== "" && selectVal !== "None" ? parseInt(selectVal) : selectVal);
 }
 
 // search for user cards -method
@@ -104,7 +90,7 @@ app.searchCards = function() {
     app.cardMatch(app.userCost, 'cost');
     app.cardMatch(app.userAttack, 'attack');
     app.cardMatch(app.userHealth, 'health');
-    console.log(`selected`, app.resultsArr);
+    console.log(`selected results array:`, app.resultsArr);
 }
 
 // card match filter method
