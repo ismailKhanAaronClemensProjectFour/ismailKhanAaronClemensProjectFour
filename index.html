@@ -29,16 +29,18 @@
 			<div class="wrapper">
 				<!-- leftmost column -->
 				<section class="selectCol sidebar">
-					
+					<div class="selectionTitle">
 						<h2>Card Selection</h2>
 						<p class="cardTotal">Cards found: <span>0</span></p>
+					</div>
 					<!-- form -->
-						<form action="" class="formSubmit">
-						<!-- Selection Inputs -->
+					<form action="" class="formSubmit">
+					<!-- Selection Inputs -->
+						<div class="formFirstHalf">
 							<!-- name search input-->
 							<fieldset class="nameSelect">
 								<label for="name" class="sr-only">Name:</label>
-								<input type="text" class="nameSearch" id="name" placeholder="Card Name Search...">
+								<input type="text" class="nameSearch" id="name" placeholder="Card Name...">
 							</fieldset>
 		
 							<!-- set -->
@@ -109,7 +111,8 @@
 									<option value="None">None</option>
 								</select>
 							</fieldset>
-		
+						</div>
+						<div class="formSecondHalf">
 							<!-- type -->
 							<fieldset class="typeSelect">
 								<label for="type">Type:</label>
@@ -180,12 +183,10 @@
 									<option value="None">None</option>
 								</select>
 							</fieldset>
-				
-		
 							<!-- Search button -->
 							<button type="submit" class="submit">Waiting...</button>
-						</form>
-					
+						</div>
+					</form>
 				</section>
 		
 				<!-- main card column -->

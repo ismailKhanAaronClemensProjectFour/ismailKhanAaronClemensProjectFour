@@ -8,7 +8,7 @@ main {
 
 .chosenCard {
 		// max-width: 350px;
-		margin: 0 auto 0 auto;
+		margin: 0 auto 10px auto;
 		
 		img {
 				visibility: hidden;
@@ -64,12 +64,21 @@ main {
 	}
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
 	main {
 
 		.infoCol {
 			width: calc((96 * 0.25) * 1%);
 			right: 2%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	main {
+
+		.infoCol {
+			display: none;
 		}
 	}
 }

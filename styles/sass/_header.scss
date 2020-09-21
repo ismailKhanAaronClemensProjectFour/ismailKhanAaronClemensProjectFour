@@ -27,6 +27,19 @@ header {
 ///////////////////
 // media queries //
 ///////////////////
+@media (max-width: 768px) {
+  header {
+    height: 40px;
+
+    .logoContainer {
+      width: 120px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+    }
+  }
+}
 
 
 

@@ -351,6 +351,18 @@ header h1 {
   color: whitesmoke;
 }
 
+@media (max-width: 768px) {
+  header {
+    height: 40px;
+  }
+  header .logoContainer {
+    width: 120px;
+  }
+  header h1 {
+    font-size: 2.6rem;
+  }
+}
+
 main .selectCol {
   width: calc(1665px * 0.15);
 }
@@ -463,6 +475,37 @@ form button[type="submit"]:focus {
   }
 }
 
+@media (max-width: 768px) {
+  main .selectCol {
+    width: 96%;
+    top: 40px;
+  }
+  .selectionTitle {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    order: 2;
+  }
+  .formFirstHalf {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+  .formSecondHalf {
+    display: flex;
+  }
+  form fieldset {
+    width: 20%;
+    margin: 5px;
+  }
+  form button[type="submit"] {
+    padding: 10px;
+    margin: 5px;
+    width: 20%;
+  }
+}
+
 .displayWrapper {
   width: 60%;
   margin: 0 0 0 15%;
@@ -515,7 +558,7 @@ main .infoCol {
 }
 
 .chosenCard {
-  margin: 0 auto 0 auto;
+  margin: 0 auto 10px auto;
 }
 
 .chosenCard img {
@@ -560,6 +603,12 @@ main .infoCol {
   main .infoCol {
     width: calc((96 * 0.25) * 1%);
     right: 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  main .infoCol {
+    display: none;
   }
 }
 
