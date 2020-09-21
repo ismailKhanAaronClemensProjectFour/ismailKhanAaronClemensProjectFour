@@ -270,17 +270,8 @@ ol {
   list-style: none;
 }
 
-h2 {
-  font-family: "Gentium Basic", serif;
-  color: #EBEBEB;
-  margin-top: 0;
-}
-
-p,
-label,
-a {
-  font-family: "Quicksand", sans-serif;
-  color: #EBEBEB;
+select {
+  appearance: none;
 }
 
 h1,
@@ -300,6 +291,19 @@ body,
 form {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  font-family: "Gentium Basic", serif;
+  color: #EBEBEB;
+  margin-top: 0;
+}
+
+p,
+label,
+a {
+  font-family: "Quicksand", sans-serif;
+  color: #EBEBEB;
 }
 
 .wrapper {

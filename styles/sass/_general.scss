@@ -41,17 +41,8 @@ ol {
     list-style: none;
 }
 
-h2 {
-    font-family: $headingFont;
-    color: $propertyText;
-    margin-top: 0;
-} 
-
-p,
-label,
-a {
-    font-family: $textFont;
-    color: $propertyText;
+select {
+    appearance: none;
 }
 
 h1,
@@ -71,6 +62,20 @@ body,
 form {
     margin: 0;
     padding: 0;
+}
+
+// typography
+h2 {
+    font-family: $headingFont;
+    color: $propertyText;
+    margin-top: 0;
+} 
+
+p,
+label,
+a {
+    font-family: $textFont;
+    color: $propertyText;
 }
 
 // wrapper
