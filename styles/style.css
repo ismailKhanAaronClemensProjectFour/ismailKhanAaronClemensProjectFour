@@ -308,6 +308,21 @@ form {
   margin: 0 auto;
 }
 
+@media (max-width: 1850px) {
+  body {
+    font-size: calc((14/10 * 1rem) + (100vw - (1000*1px))*((16 - 14)/(1850 - 1000)));
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 1.4rem;
+  }
+  .wrapper {
+    width: 96%;
+  }
+}
+
 header {
   padding: 5px 0;
   background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
@@ -424,6 +439,24 @@ form button[type="submit"]:focus {
   main .selectCol h2 {
     font-size: calc((17/10 * 1rem) + (100vw - (1000*1px))*((32 - 17)/(1850 - 1000)));
   }
+  .cardTotal {
+    font-size: calc((14/10 * 1rem) + (100vw - (1000*1px))*((19 - 14)/(1850 - 1000)));
+  }
+  .cardTotal span {
+    width: calc((28/10 * 1rem) + (100vw - (1000*1px))*((36 - 28)/(1850 - 1000)));
+  }
+}
+
+@media (max-width: 1000px) {
+  main .selectCol {
+    width: calc((96 * 0.15) * 1%);
+  }
+  main .selectCol h2 {
+    font-size: 1.6rem;
+  }
+  .cardTotal {
+    font-size: 1.3rem;
+  }
 }
 
 .displayWrapper {
@@ -516,6 +549,13 @@ main .infoCol {
   main .infoCol {
     width: calc((90 * 0.25) * 1%);
     right: 5%;
+  }
+}
+
+@media (max-width: 1000px) {
+  main .infoCol {
+    width: calc((96 * 0.25) * 1%);
+    right: 2%;
   }
 }
 

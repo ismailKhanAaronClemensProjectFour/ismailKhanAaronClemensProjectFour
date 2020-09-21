@@ -85,15 +85,45 @@ form {
 	display: block;
 }
 
+///////////////////
+// media queries //
+///////////////////
 @media (max-width: 1850px) {
 	main {
 		.selectCol {
 			width: calc((90 * 0.15) * 1%);
+			
 
 			h2 {
 				@include variableFontSize(17, 1000, 32, 1850);
 			}
+		}
+	}
+	.cardTotal {
+		@include variableFontSize(14, 1000, 19, 1850);
+
+		span {
+			@include variableWidth(28, 1000, 36, 1850);
+		}
 	}
 }
+
+@media (max-width: 1000px) {
+	main {
+		.selectCol {
+			width: calc((96 * 0.15) * 1%);
+
+			h2 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.cardTotal {
+		font-size: 1.3rem;
+	}
+	
 }
+
+
 

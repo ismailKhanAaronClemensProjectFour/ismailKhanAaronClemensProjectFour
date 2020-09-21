@@ -79,3 +79,22 @@ form {
     width: 90%;
     margin: 0 auto;
 }
+
+///////////////////
+// media queries //
+///////////////////
+@media (max-width: 1850px) {
+    body {
+        @include variableFontSize(14, 1000, 16, 1850);
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .wrapper {
+        width: 96%;
+    }
+}

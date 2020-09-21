@@ -51,11 +51,25 @@ main {
 		}
 }
 
+///////////////////
+// media queries //
+///////////////////
 @media (max-width: 1850px) {
-		main {
-				.infoCol {
-						width: calc((90 * 0.25) * 1%);
-						right: 5%;           
-				}
+	main {
+
+		.infoCol {
+				width: calc((90 * 0.25) * 1%);
+				right: 5%;           
 		}
+	}
+}
+
+@media(max-width: 1000px) {
+	main {
+
+		.infoCol {
+			width: calc((96 * 0.25) * 1%);
+			right: 2%;
+		}
+	}
 }

@@ -10,3 +10,8 @@
 @mixin variableFontSize($startFontSize, $startScreenWidth, $endFontSize, $endScreenWidth) {
     font-size: calc((#{$startFontSize}/10 * 1rem) + (100vw - (#{$startScreenWidth}*1px))*((#{$endFontSize} - #{$startFontSize})/(#{$endScreenWidth} - #{$startScreenWidth})))
 }
+
+// variable width
+@mixin variableWidth($startWidth, $startScreenWidth, $endWidth, $endScreenWidth) {
+    width: calc((#{$startWidth}/10 * 1rem) + (100vw - (#{$startScreenWidth}*1px))*((#{$endWidth} - #{$startWidth})/(#{$endScreenWidth} - #{$startScreenWidth})))
+}
