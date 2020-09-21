@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -26,8 +27,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -45,8 +45,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b, strong {
@@ -140,8 +139,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -159,8 +157,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -212,13 +209,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -229,8 +224,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -257,13 +251,8 @@ main {
 main .sidebar {
   height: calc(100% - 28.4px - 60px);
   width: calc(1350px * 0.2);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -322,15 +311,9 @@ form {
 header {
   padding: 5px 0;
   background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 60px;
   position: fixed;
   top: 0;
@@ -415,8 +398,7 @@ form button[type="submit"]:hover, form button[type="submit"]:focus {
 
 form select,
 form input,
-form button[type="submit"],
-form li {
+form button[type="submit"] {
   font-family: "Quicksand", sans-serif;
   border-radius: 1rem;
   background-color: #281f15;
@@ -426,9 +408,13 @@ form li {
 
 form select:focus,
 form input:focus,
-form button[type="submit"]:focus,
-form li:focus {
+form button[type="submit"]:focus {
   outline: 1px dotted #EAC435;
+}
+
+.adventure::before {
+  content: '※';
+  display: block;
 }
 
 @media (max-width: 1850px) {
@@ -447,13 +433,9 @@ form li:focus {
 
 .displayWrapper .cardFlexContainer {
   padding: 70px 10px 38.4px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-content: flex-start;
+  flex-wrap: wrap;
   background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
   background-position: center;
   background-size: cover;
@@ -474,8 +456,7 @@ form li:focus {
 }
 
 .displayWrapper .cardFlexContainer .cardBox:hover, .displayWrapper .cardFlexContainer .cardBox:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .displayWrapper .cardFlexContainer .noCards {
@@ -510,8 +491,7 @@ main .infoCol {
   height: 100%;
   max-width: 330px;
   max-height: 330px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -15px;
 }
 
@@ -525,6 +505,7 @@ main .infoCol {
 .detailContainer p {
   padding-top: 7px;
   color: #EAC435;
+  border-bottom: 1px solid #C7B393;
 }
 
 .detailContainer span {
@@ -548,12 +529,8 @@ footer {
 }
 
 footer .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 footer .wrapper p:last-child {

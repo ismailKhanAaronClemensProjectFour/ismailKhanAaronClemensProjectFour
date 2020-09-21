@@ -57,6 +57,7 @@ form {
 		margin-top: 10px;
 		width: 100%;
 		font-size: 1.8rem;
+		
 
 			&:hover,
 			&:focus {
@@ -66,8 +67,7 @@ form {
 
 	select, 
 	input, 
-	button[type="submit"],
-	li {
+	button[type="submit"] {
 		font-family: $textFont;
 		border-radius: 1rem;
 		background-color: $borderBackground;
@@ -78,6 +78,11 @@ form {
 			outline: 1px dotted $border;
 		}
 	}
+}
+
+.adventure::before {
+	content : '※';
+	display: block;
 }
 
 @media (max-width: 1850px) {
