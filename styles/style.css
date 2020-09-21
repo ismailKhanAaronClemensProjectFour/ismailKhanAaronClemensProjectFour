@@ -459,13 +459,16 @@ form button[type="submit"]:focus {
   background-repeat: repeat-x;
   min-height: 100vh;
   width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .displayWrapper .cardFlexContainer .cardBox {
-  width: calc(100% / 4);
+  width: calc(100% / 5);
 }
 
-.displayWrapper .cardFlexContainer .cardBox:hover {
+.displayWrapper .cardFlexContainer .cardBox:hover, .displayWrapper .cardFlexContainer .cardBox:focus {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -475,6 +478,12 @@ form button[type="submit"]:focus {
   padding-left: 20px;
   color: red;
   font-size: 3.1rem;
+}
+
+@media (max-width: 1500px) {
+  .displayWrapper .cardFlexContainer .cardBox {
+    width: calc(100% / 4);
+  }
 }
 
 main .infoCol {

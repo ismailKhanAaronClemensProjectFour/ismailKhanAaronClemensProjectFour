@@ -16,11 +16,16 @@
         background-repeat: repeat-x;
         min-height: 100vh;
         width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
     
         .cardBox {
-            width: calc(100% / 4);
+            width: calc(100% / 5);
 
-            &:hover {
+            &:hover,
+            &:focus {
                 transform: scale(1.1);
             }
         }
@@ -32,4 +37,19 @@
             font-size: 3.1rem;
         }
     }
+}
+
+@media (max-width: 1500px) {
+
+    .displayWrapper{
+
+        .cardFlexContainer {
+
+            .cardBox {
+                width: calc(100% / 4);
+            }
+        }
+    }
+    
+    
 }

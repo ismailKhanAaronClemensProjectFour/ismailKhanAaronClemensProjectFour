@@ -1,9 +1,7 @@
 let $userCost= $('#cost');
 
-
 // namespace
 const app = {};
-
 
 // user selections in namespace
 app.userName = "";
@@ -119,7 +117,6 @@ app.searchCards = function() {
 // card match filter method
 app.cardMatch = function(userChoice, selection) {
     app.resultsArr = app.resultsArr.filter(function(card) {
-
         if (userChoice === 10) {
             return card[selection] >= 10;
         } else if (userChoice === "None") {
@@ -136,7 +133,7 @@ app.displayCards = function() {
     if (app.resultsArr.length !== 0) {
         app.resultsArr.forEach(function(card) {
             const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
-            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr('id',`${card.id}`);
+            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
             $('.cardFlexContainer').append(userCard);
         });
     } else {
@@ -157,8 +154,7 @@ app.selectedImgCard = function() {
         console.log(this.currentSrc);
         console.log(this);
         const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', this.currentSrc);
-        const cropArea = $('<div>').addClass('crop');
-        $('.chosenCard').append(selectedImg, cropArea);
+        $('.chosenCard').append(selectedImg);
     })
 }
 
@@ -184,7 +180,7 @@ app.chooseACard = function() {
         const cardHealth = $('#cardHealth').text(app.userCard.health);
         const type = $('#cardType').text(app.userCard.type);
         const rarity = $('#rarity').text(app.userCard.rarity);
-        const xpac = $('#xpac').text(app.userCard.set).attr('src', "");
+        app.updateSetName();
         const cardID = $('#id').text(app.userCard.id);
         const artist = $('#artist').text(app.userCard.artist);
         const flavour = $('#flavour').text(app.userCard.flavor);
@@ -194,11 +190,17 @@ app.chooseACard = function() {
 }
 
 // apply gem icon for each type of rarity 
-app.rarityCheck = function() {
-    app.resultsArr.find(function(card){
-        return card.id === userCardId;
+
+// update set name 
+app.updateSetName = function() {
+    app.setName = []
+    $('#set option').each(function(){
+        if ($(this).val() === app.userCard.set) {
+            app.setName.push($(this).text());
+        }
     });
-}
+    const xpac = $('#xpac').text(app.setName[0]);
+};
 
 // init method
 app.init = function() {
