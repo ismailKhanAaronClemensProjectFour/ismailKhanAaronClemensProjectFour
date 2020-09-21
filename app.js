@@ -183,7 +183,7 @@ app.chooseACard = function() {
         const cardHealth = $('#cardHealth').text(app.userCard.health);
         const type = $('#cardType').text(app.userCard.type);
         const rarity = $('#rarity').text(app.userCard.rarity);
-        const xpac = $('#xpac').text(app.userCard.set);
+        app.updateSetName();
         const cardID = $('#id').text(app.userCard.id);
         const artist = $('#artist').text(app.userCard.artist);
         const flavour = $('#flavour').text(app.userCard.flavor);
@@ -192,6 +192,16 @@ app.chooseACard = function() {
     });
 }
 
+// update set name 
+app.updateSetName = function() {
+    app.setName = []
+        $('#set option').each(function(){
+            if ($(this).val() === app.userCard.set) {
+                app.setName.push($(this).text());
+            }
+        });
+        const xpac = $('#xpac').text(app.setName[0]);
+}
 
 
 // init method
