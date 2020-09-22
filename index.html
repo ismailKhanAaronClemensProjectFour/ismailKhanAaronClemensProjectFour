@@ -16,217 +16,217 @@
 	<title>Hearthstone Card Search Toolkit</title>
 </head>
 <body>
-		<header>
-			<!-- Logo and Title -->
-			<div class="logoContainer">
-				<img src="./assets/hearthstoneLogo.png" alt="Hearthstone Logo" class="hsLogo">
-			</div>
-			<h1>Card Search Toolkit</h1>
-		</header>
+	<header>
+		<!-- Logo and Title -->
+		<div class="logoContainer">
+			<img src="./assets/hearthstoneLogo.png" alt="Hearthstone Logo" class="hsLogo">
+		</div>
+		<h1>Card Search Toolkit</h1>
+	</header>
 		
-		<main>
-			<div class="wrapper">
-				<!-- leftmost column -->
-				<section class="selectCol sidebar">
-					<div class="selectionTitle">
-						<h2>Card Selection</h2>
-						<p class="cardTotal">Cards found: <span>0</span></p>
-					</div>
-					<!-- form -->
-					<form action="" class="formSubmit">
-					<!-- Selection Inputs -->
-						<div class="formFirstHalf">
-							<!-- name search input-->
-							<fieldset class="nameSelect">
-								<label for="name" class="sr-only">Name:</label>
-								<input type="text" class="nameSearch" id="name" placeholder="Card Name...">
-							</fieldset>
-		
-							<!-- set -->
-							<fieldset class="setSelect">
-								<label for="set">Sets:</label>
-								<select name="set" id="set">
-									<option value="">All Sets</option>
-									<option value="CORE">Basic</option>
-									<option value="EXPERT1">Classic</option>
-									<option value="NAXX" class="adventure">*Curse of Naxxramas</option>
-									<option value="GVG">Goblins vs Gnomes</option>
-									<option value="BRM" class="adventure">*Blackrock Mountain</option>
-									<option value="TGT">The Grand Tournament</option>
-									<option value="LOE" class="adventure">*The League of Explorers</option>
-									<option value="OG">Whispers of Old Gods</option>
-									<option value="KARA" class="adventure">*One Night in Karazhan</option>
-									<option value="GANGS">Mean Streets of Gadgetzan</option>
-									<option value="UNGORO">Journey to Un'Goro</option>
-									<option value="ICECROWN">Knights of the Frozen Throne</option>
-									<option value="LOOTAPALOOZA">Kobolds & Catacombs</option>
-									<option value="GILNEAS">The Witchwood</option>
-									<option value="BOOMSDAY">The Boomsday Project</option>
-									<option value="TROLL">Rastakhan's Rumble</option>
-									<option value="DALARAN">Rise of Shadows</option>
-									<option value="ULDUM">Saviors of Uldum</option>
-									<option value="DRAGONS">Descent of Dragons</option>
-									<option value="YEAR_OF_THE_DRAGON" class="adventure">*Galakrond's Awakening</option>
-									<option value="DEMON_HUNTER_INITIATE" class="specialRelease">**Demon Hunter Initiate</option>
-									<option value="BLACK_TEMPLE">Ashes of Outland</option>
-									<option value="SCHOLOMANCE">Scholomance Academy</option>
-									<option value="HOF" class="specialRelease">**Hall of Fame</option>
-								</select>
-							</fieldset>
-		
-							<!-- class  -->
-							<fieldset class="classSelect">
-								<label for="classes">Classes:</label>
-								<select name="classes" id="classes">
-									<option value="">All Classes</option>
-									<option value="DEMONHUNTER">Demon Hunter</option>
-									<option value="DRUID">Druid</option>
-									<option value="HUNTER">Hunter</option>
-									<option value="MAGE">Mage</option>
-									<option value="NEUTRAL">Neutral</option>
-									<option value="PALADIN">Paladin</option>
-									<option value="PRIEST">Priest</option>
-									<option value="ROGUE">Rogue</option>
-									<option value="SHAMAN">Shaman</option>
-									<option value="WARLOCK">Warloc</option>
-									<option value="WARRIOR">Warrior</option>
-								</select>
-							</fieldset>
-		
-							<!-- race -->
-							<fieldset class="raceSelect">
-								<label for="race">Races:</label>
-								<select name="race" id="race">
-									<option value="">All Races</option>
-									<option value="BEAST">Beast</option>
-									<option value="DEMON">Demon</option>
-									<option value="DRAGON">Dragon</option>
-									<option value="ELEMENTAL">Elemental</option>
-									<option value="MECH">Mech</option>
-									<option value="MURLOC">Murloc</option>
-									<option value="PIRATE">Pirate</option>
-									<option value="TOTEM">Totem</option>
-									<option value="ALL">All (Nightmare Amalgam)</option>
-									<option value="None">None</option>
-								</select>
-							</fieldset>
-						</div>
-						
-						<div class="formSecondHalf">
-							<!-- type -->
-							<fieldset class="typeSelect">
-								<label for="type">Type:</label>
-								<select name="type" id="type">
-									<option value="">All Types</option>
-									<option value="MINION">Minion</option>
-									<option value="SPELL">Spell</option>
-									<option value="HERO">Hero</option>
-									<option value="WEAPON">Weapon</option>
-									<!-- hero power -->
-								</select>
-							</fieldset>
-							
-							<!-- cost -->
-							<fieldset class="costSelect">
-								<label for="cost">Cost:</label>
-								<select name="cost" id="cost">
-									<option value="">All Costs</option>
-									<option value="0">0</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10+</option>
-								</select>
-							</fieldset>
-
-							<!-- attack -->
-							<fieldset class="attackSelect">
-								<label for="attack">Attack:</label>
-								<select name="attack" id="attack">
-									<option value="">All Attack</option>
-									<option value="0">0</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10+</option>
-									<option value="None">None</option>
-								</select>
-							</fieldset>
-
-							<!-- health -->
-							<fieldset class="healthSelect">
-								<label for="health">Health:</label>
-								<select name="health" id="health">
-									<option value="">All Health</option>
-									<option value="0">0</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10+</option>
-									<option value="None">None</option>
-								</select>
-							</fieldset>
-							<!-- Search button -->
-							<button type="submit" class="submit">Waiting...</button>
-						</div>
-					</form>
-				</section>
-		
-				<!-- main card column -->
-				<section class="displayCol displayWrapper">
-					<ul class="cardFlexContainer">
-						<!-- inject js in here -->
-					</ul>
-				</section>
-		
-				<!-- rightmost column -->
-				<section class="infoCol sidebar">
-					<!-- card img --> 
-					<div class="chosenCard">
-						<img src="https://art.hearthstonejson.com/v1/render/latest/enUS/256x/TRL_390.png" alt="">
-					</div>
-					<!-- card information -->
-					<div class="detailContainer">
-						<p>Name: <span id="cardName"></span></p>
-						<p>Cost: <span id="cardCost"></span></p>
-						<p>Attack: <span id="cardAttack"></span></p>
-						<p>Health: <span id="cardHealth"></span></p>
-						<p class="styleProp">Type: <span id="cardType"></span></p>
-						<p class="styleProp">Rarity: <span id="rarity"></span></p> 
-						<p>Expansion: <br><span id="xpac"></span></p>
-						<p>Artist: <span id="artist"></span></p>
-						<p>Flavour Text: <br><span id="flavour"></span></p>
+	<main>
+		<div class="wrapper">
+			<!-- leftmost column -->
+			<section class="selectCol sidebar">
+				<div class="selectionTitle">
+					<h2>Card Selection</h2>
+					<p class="cardTotal">Cards found: <span>0</span></p>
+				</div>
+				<!-- form -->
+				<form action="" class="formSubmit">
+				<!-- Selection Inputs -->
+					<div class="formFirstHalf">
+						<!-- name search input-->
+						<fieldset class="nameSelect">
+							<label for="name" class="sr-only">Name:</label>
+							<input type="text" class="nameSearch" id="name" placeholder="Card Name...">
+						</fieldset>
+	
+						<!-- set -->
+						<fieldset class="setSelect">
+							<label for="set">Sets:</label>
+							<select name="set" id="set">
+								<option value="">All Sets</option>
+								<option value="CORE">Basic</option>
+								<option value="EXPERT1">Classic</option>
+								<option value="NAXX" class="adventure">*Curse of Naxxramas</option>
+								<option value="GVG">Goblins vs Gnomes</option>
+								<option value="BRM" class="adventure">*Blackrock Mountain</option>
+								<option value="TGT">The Grand Tournament</option>
+								<option value="LOE" class="adventure">*The League of Explorers</option>
+								<option value="OG">Whispers of Old Gods</option>
+								<option value="KARA" class="adventure">*One Night in Karazhan</option>
+								<option value="GANGS">Mean Streets of Gadgetzan</option>
+								<option value="UNGORO">Journey to Un'Goro</option>
+								<option value="ICECROWN">Knights of the Frozen Throne</option>
+								<option value="LOOTAPALOOZA">Kobolds & Catacombs</option>
+								<option value="GILNEAS">The Witchwood</option>
+								<option value="BOOMSDAY">The Boomsday Project</option>
+								<option value="TROLL">Rastakhan's Rumble</option>
+								<option value="DALARAN">Rise of Shadows</option>
+								<option value="ULDUM">Saviors of Uldum</option>
+								<option value="DRAGONS">Descent of Dragons</option>
+								<option value="YEAR_OF_THE_DRAGON" class="adventure">*Galakrond's Awakening</option>
+								<option value="DEMON_HUNTER_INITIATE" class="specialRelease">**Demon Hunter Initiate</option>
+								<option value="BLACK_TEMPLE">Ashes of Outland</option>
+								<option value="SCHOLOMANCE">Scholomance Academy</option>
+								<option value="HOF" class="specialRelease">**Hall of Fame</option>
+							</select>
+						</fieldset>
+	
+						<!-- class  -->
+						<fieldset class="classSelect">
+							<label for="classes">Classes:</label>
+							<select name="classes" id="classes">
+								<option value="">All Classes</option>
+								<option value="DEMONHUNTER">Demon Hunter</option>
+								<option value="DRUID">Druid</option>
+								<option value="HUNTER">Hunter</option>
+								<option value="MAGE">Mage</option>
+								<option value="NEUTRAL">Neutral</option>
+								<option value="PALADIN">Paladin</option>
+								<option value="PRIEST">Priest</option>
+								<option value="ROGUE">Rogue</option>
+								<option value="SHAMAN">Shaman</option>
+								<option value="WARLOCK">Warloc</option>
+								<option value="WARRIOR">Warrior</option>
+							</select>
+						</fieldset>
+	
+						<!-- race -->
+						<fieldset class="raceSelect">
+							<label for="race">Races:</label>
+							<select name="race" id="race">
+								<option value="">All Races</option>
+								<option value="BEAST">Beast</option>
+								<option value="DEMON">Demon</option>
+								<option value="DRAGON">Dragon</option>
+								<option value="ELEMENTAL">Elemental</option>
+								<option value="MECH">Mech</option>
+								<option value="MURLOC">Murloc</option>
+								<option value="PIRATE">Pirate</option>
+								<option value="TOTEM">Totem</option>
+								<option value="ALL">All (Nightmare Amalgam)</option>
+								<option value="None">None</option>
+							</select>
+						</fieldset>
 					</div>
 					
-				</section>	
-			</div><!-- end wrapper -->
-		</main>
+					<div class="formSecondHalf">
+						<!-- type -->
+						<fieldset class="typeSelect">
+							<label for="type">Type:</label>
+							<select name="type" id="type">
+								<option value="">All Types</option>
+								<option value="MINION">Minion</option>
+								<option value="SPELL">Spell</option>
+								<option value="HERO">Hero</option>
+								<option value="WEAPON">Weapon</option>
+								<!-- hero power -->
+							</select>
+						</fieldset>
+						
+						<!-- cost -->
+						<fieldset class="costSelect">
+							<label for="cost">Cost:</label>
+							<select name="cost" id="cost">
+								<option value="">All Costs</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10+</option>
+							</select>
+						</fieldset>
+
+						<!-- attack -->
+						<fieldset class="attackSelect">
+							<label for="attack">Attack:</label>
+							<select name="attack" id="attack">
+								<option value="">All Attack</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10+</option>
+								<option value="None">None</option>
+							</select>
+						</fieldset>
+
+						<!-- health -->
+						<fieldset class="healthSelect">
+							<label for="health">Health:</label>
+							<select name="health" id="health">
+								<option value="">All Health</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10+</option>
+								<option value="None">None</option>
+							</select>
+						</fieldset>
+						<!-- Search button -->
+						<button type="submit" class="submit">Waiting...</button>
+					</div>
+				</form>
+			</section>
 	
-		<!-- footer -->
-		<footer>
-			<div class="wrapper">
-				<p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron Clemens</a> & <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
-				<p>|| Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
-			</div>
-		</footer>
+			<!-- main card column -->
+			<section class="displayCol displayWrapper">
+				<ul class="cardFlexContainer">
+					<!-- inject js in here -->
+				</ul>
+			</section>
+	
+			<!-- rightmost column -->
+			<section class="infoCol sidebar">
+				<!-- card img --> 
+				<div class="chosenCard">
+					<img src="https://art.hearthstonejson.com/v1/render/latest/enUS/256x/TRL_390.png" alt="">
+				</div>
+				<!-- card information -->
+				<div class="detailContainer">
+					<p>Name: <span id="cardName"></span></p>
+					<p>Cost: <span id="cardCost"></span></p>
+					<p>Attack: <span id="cardAttack"></span></p>
+					<p>Health: <span id="cardHealth"></span></p>
+					<p class="styleProp">Type: <span id="cardType"></span></p>
+					<p class="styleProp">Rarity: <span id="rarity"></span></p> 
+					<p>Expansion: <br><span id="xpac"></span></p>
+					<p>Artist: <span id="artist"></span></p>
+					<p>Flavour Text: <br><span id="flavour"></span></p>
+				</div>
+				
+			</section>	
+		</div><!-- end wrapper -->
+	</main>
+	
+	<!-- footer -->
+	<footer>
+		<div class="wrapper">
+			<p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron Clemens</a> & <a href="https://github.com/ismailkhanio" target="_blank" rel="noopener noreferrer">Ismail Khan</a></p>
+			<p>|| Created at <a href="https://junocollege.com" target="_blank" rel="noopener noreferrer">Juno College</a></p>
+		</div>
+	</footer>
 
 	<!-- javascript -->
 	<script src="app.js"></script>
