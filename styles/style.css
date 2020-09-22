@@ -653,6 +653,12 @@ main .infoCol {
   }
 }
 
+@media (max-width: 480px) {
+  .detailContainer {
+    font-size: 1.2rem;
+  }
+}
+
 footer {
   position: fixed;
   bottom: 0;
