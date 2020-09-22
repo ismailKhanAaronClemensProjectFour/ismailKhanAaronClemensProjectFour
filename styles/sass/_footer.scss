@@ -23,3 +23,16 @@ footer {
         @include variableFontSize(14, 480, 16, 768);
     }
 }
+
+@media (max-width: 480px) {
+    footer {
+        text-align: center;
+        height: 45px;
+        
+        .wrapper {
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+}

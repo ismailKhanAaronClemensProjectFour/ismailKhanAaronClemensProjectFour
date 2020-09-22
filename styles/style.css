@@ -334,6 +334,12 @@ main .sidebar {
   }
 }
 
+@media (max-width: 480px) {
+  main .sidebar {
+    height: calc(100% - 45px - 40px);
+  }
+}
+
 header {
   padding: 5px 0;
   background: url("https://wallpapershome.com/images/pages/pic_h/6001.jpg");
@@ -654,5 +660,17 @@ footer .wrapper p:last-child {
 @media (max-width: 768px) {
   footer {
     font-size: calc((14/10 * 1rem) + (100vw - (480*1px))*((16 - 14)/(768 - 480)));
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    text-align: center;
+    height: 45px;
+  }
+  footer .wrapper {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
