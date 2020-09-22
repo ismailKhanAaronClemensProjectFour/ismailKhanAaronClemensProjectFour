@@ -37,20 +37,24 @@ app.requestAllCards = $.ajax({
 // get all cards from api - method
 app.getAllCards = function() {
     app.requestAllCards.then(function(response) {
-        // set allCards array to all cards minus the cards with set= HERO_SKINS, these cards are unwanted for this project
-        app.allCards = response.filter(function(card) {
-            return card.set !== "HERO_SKINS";
-        });
-
-        // remove all cards with no flavour text (which are unplayable cards)
-        app.allCards = app.allCards.filter(function(card) {
-            return card.flavor !== undefined
-        });
+        // set allCards array to all cards minus the cards with set= HERO_SKINS, OR cards with both type = HERO and rarity = FREE, these cards are unwanted for this project
+        app.initialFilter(response);
 
         // take filtered cards as new results array
         app.resultsArr = app.allCards;
         $searchButton.text('Search');
         app.getUserCards();
+    });
+}
+
+// the initial filtering of ajax response to get rid of a few unwanted cards for this project
+app.initialFilter = function(response) {
+    app.allCards = response.filter(function(card) {
+        if (card.set === "HERO_SKINS" || card.type === "HERO" && card.rarity === "FREE") {
+            return
+        } else {
+            return card;
+        }
     });
 }
 
