@@ -507,6 +507,12 @@ form button[type="submit"]:focus {
   }
 }
 
+@media (max-height: 730px) {
+  form fieldset label {
+    display: none;
+  }
+}
+
 .displayWrapper {
   width: 60%;
   margin: 0 0 0 15%;

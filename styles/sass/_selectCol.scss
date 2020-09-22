@@ -138,6 +138,17 @@ form {
 	}
 }
 
+@media (max-height: 730px ) {
+	form {
+
+		fieldset {
+
+			label{
+				display:none;
+			}
+		}
+	}
+}
 	
 
 
