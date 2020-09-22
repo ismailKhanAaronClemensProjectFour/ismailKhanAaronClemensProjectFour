@@ -6,7 +6,7 @@ const $searchButton = $('button[type=submit]');
 const $cardsFound = $('.cardTotal span');
 const $infoCol = $('.infoCol');
 
-// namespace
+// namespace object
 const app = {};
 
 // user selections in namespace
@@ -39,15 +39,23 @@ app.getAllCards = function() {
     app.requestAllCards.then(function(response) {
         // set allCards array to all cards minus the cards with set= HERO_SKINS, OR cards with both type = HERO and rarity = FREE, these cards are unwanted for this project
         app.initialFilter(response);
+<<<<<<< HEAD
         // set results array to all cards, remaining after initial filter
+=======
+
+        // take filtered cards as new results array
+>>>>>>> 4095017a8a38e9c2250e7478961131a0f9a189b5
         app.resultsArr = app.allCards;
-        console.log('all the cards', app.resultsArr); //////// 2nd console log
         $searchButton.text('Search');
         app.getUserCards();
     });
 }
 
+<<<<<<< HEAD
 // intitially filter out unwanted cards from the response array from ajax
+=======
+// the initial filtering of ajax response to get rid of a few unwanted cards for this project
+>>>>>>> 4095017a8a38e9c2250e7478961131a0f9a189b5
 app.initialFilter = function(response) {
     app.allCards = response.filter(function(card) {
         if (card.set === "HERO_SKINS" || card.type === "HERO" && card.rarity === "FREE") {
@@ -76,6 +84,7 @@ app.reset = function() {
 
 // get user search values - method
 app.getSearchValues = function() {
+    // get values of selected dropdown items
     app.userName = $('#name').val();
     app.userSet = $('#set').val();
     app.userClass = $('#classes').val();
@@ -84,7 +93,6 @@ app.getSearchValues = function() {
     app.userCost = app.getUserInt($userCost);
     app.userAttack = app.getUserInt($userAttack);
     app.userHealth = app.getUserInt($userHealth);
-    console.log(`Search for: name= ${app.userName} set= ${app.userSet} class= ${app.userClass} race = ${app.userRace} type= ${app.userType} cost= ${app.userCost} attack= ${app.userAttack} health= ${app.userHealth}`);
 }    
 
 // if userSelect is a number, parseInt, else keep the "" or "None" value
@@ -103,11 +111,11 @@ app.searchCards = function() {
     app.cardMatch(app.userCost, 'cost');
     app.cardMatch(app.userAttack, 'attack');
     app.cardMatch(app.userHealth, 'health');
-    console.log(`selected results array:`, app.resultsArr);
 }
 
 // card match filter method
 app.cardMatch = function(userChoice, selection) {
+    // filter the results array based on user selection in .getSearchValues in .searchCards
     app.resultsArr = app.resultsArr.filter(function(card) {
         if (userChoice === 10) {
             return card[selection] >= 10;
@@ -124,22 +132,41 @@ app.displayCards = function() {
     // start by emptying display area from previous results
     $('.cardFlexContainer').empty();
     app.updateForm();
+    app.checkToDisplay();
     
+}
+
+// check if cards have been found and display them, else diplay message for no cards found
+app.checkToDisplay = function() {
     if (app.resultsArr.length !== 0) {
-        // cards found in results array
-        // loop through each card and display it to page
-        app.resultsArr.forEach(function(card) {
-            const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`);
-            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
-            $('.cardFlexContainer').append(userCard);
-        });
+        // display cards found in results array
+        app.displayFoundCards();
     } else {
-        // no cards found in results array
-        const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
-        $('.cardFlexContainer').append(noCardsMessage);
+        // display message if no cards found in results array
+        app.noCardsMessage();
     }
 }
 
+// display all the found cards to cardFlexContainer - method
+app.displayFoundCards = function() {
+    // loop through each card found and display it to page
+    app.resultsArr.forEach(function(card) {
+        // display a card taking the card.id from the api output
+        const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`).attr('alt', `${card.flavor}`);
+        const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
+        // append each userCard to the display container 
+        $('.cardFlexContainer').append(userCard);
+    });
+}
+
+// display a message if no cards found - method
+app.noCardsMessage = function() {
+    // no cards found in results array is displayed here
+    const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
+    $('.cardFlexContainer').append(noCardsMessage);
+}
+
+// update cards found and reset name search - method
 app.updateForm = function() {
     // update number of cards found to page
     app.cardsFoundTotal = app.resultsArr.length;
@@ -147,7 +174,6 @@ app.updateForm = function() {
     // update name search box
     $('#name').val("");
 }
-
 
 // on click of card in display results, show clicked card in the infoCol
 app.chooseACard = function() {
@@ -162,6 +188,7 @@ app.chooseACard = function() {
         app.userCard = app.resultsArr.find(function(card){
             return card.id === userCardId;
         });
+        // change card set name from api value to proper name used by Hearthstone.
         app.updateSetName();
         // display details of card and its image (userCardUrl)
         app.displayCardProperties(userCardUrl);
@@ -193,9 +220,10 @@ app.displayCardProperties = function(url) {
     const xpac = $('#xpac').text(app.setName[0]);
     const artist = $('#artist').text(app.userCard.artist);
     const flavour = $('#flavour').text(app.userCard.flavor);
-
+    
     // display image of single selected card
-    const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', url);
+    const selectedImg = $('<img>').addClass('selectedImg unhide').attr('src', url).attr('alt', app.userCard.flavor);
+    
     $('.chosenCard').append(selectedImg);
     $('span').append(flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
 }
@@ -218,7 +246,6 @@ app.hideColumn = function() {
 
 // init method
 app.init = function() {
-    console.log('initialized'); //////// 1st console log
     // OUR CODE HERE;
     app.getAllCards();
     app.chooseACard();

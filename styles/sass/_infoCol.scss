@@ -4,45 +4,35 @@ main {
 				width: calc(1665px * 0.25);
 				right: calc((100% - 1665px) / 2); 
 				transition: all 0.3s linear;
+				justify-content: flex-start;
 		}
 }
 
 .chosenCard {
-		// max-width: 350px;
-		margin: 0 auto 10px auto;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 250px;
+		position:relative;
+		top:-30px;
 		
 		img {
 				visibility: hidden;
 		}
 		
 		.unhide {
-				// border: 3px outset #f2af1b;
-				// background: rgba(242, 175, 27, 0.3);
 				visibility: visible;
 				
 				width: 100%;
-				height: 100%;
-				max-width: 330px;
-				max-height: 330px;
-				
 				object-fit: cover;
-				margin-top: -15px;
 		}
 }
 
-// .styleProp span {
-// 	text-transform: lowercase;
-// 	text-transform: capitalize;
-// }
-
 .detailContainer {
-		padding: 5px 5px 10px 7px;
+		padding: 5px;
 		background: $borderBackground;
 		border-radius: 1rem;
-		margin-top: -30px;
 
 		p {
-				// line-height: 1.4;
 				padding-top: 7px;
 				color: $heading;
 				border-bottom: 1px solid $displayLines;
@@ -63,6 +53,10 @@ main {
 				right: 5%;           
 		}
 	}
+
+	.detailContainer {
+		margin-top: -40px;
+	}
 }
 
 @media (max-width: 1000px) {
@@ -72,6 +66,10 @@ main {
 			width: calc((96 * 0.25) * 1%);
 			right: 2%;
 		}
+	}
+
+	.chosenCard {
+		@include variableWidth(150, 769, 200, 1000);
 	}
 }
 
@@ -86,8 +84,41 @@ main {
 			opacity: 0.97;
 		}
 	}
+
+	.chosenCard {
+		width: 150px;
+		top: -20px;
+	}
+
+	.detailContainer {
+		margin-top: -30px;
+	}
 }
 
-@media (max-height: 730px) {
-	
+@media (max-width: 480px) {
+	.detailContainer {
+		font-size: 1.2rem;
+
+		.healthAttack,
+		.costType {
+			display: flex;
+
+			p {
+				width: 50%;
+			}
+		}
+
+		.costType {
+
+			p:first-child {
+				width: 40%;
+			}
+
+			p:last-child {
+				width: 60%;
+			}
+
+		}
+	}
 }
+

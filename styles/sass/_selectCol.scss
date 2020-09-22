@@ -12,6 +12,7 @@ main {
 
 .cardTotal {
 	font-size: 1.9rem;
+	
 	span {
 		display: inline-block;
 		width: 36px;
@@ -34,14 +35,13 @@ form {
 			padding: 5px;
 			position: relative;
 			left: -5px;
-			// display: none;
 		}
 
 		select,
 		input {
 			width: 100%;
 			margin-top: 5px;
-			padding: 1px;
+			padding: 1px 5px;
 		}
 
 		input {
@@ -149,6 +149,7 @@ form {
 		}
 	}
 }
+
 	
 
 
