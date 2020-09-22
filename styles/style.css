@@ -487,6 +487,9 @@ form button[type="submit"]:focus {
     width: 110px;
     background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
   }
+  main .selectCol h2 {
+    margin-bottom: 5px;
+  }
 }
 
 .displayWrapper {
