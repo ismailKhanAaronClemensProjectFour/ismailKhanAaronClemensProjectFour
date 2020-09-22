@@ -124,25 +124,41 @@ app.displayCards = function() {
     // start by emptying display area from previous results
     $('.cardFlexContainer').empty();
     app.updateForm();
+    app.checkToDisplay();
     
-    if (app.resultsArr.length !== 0) {
-        // cards found in results array
-        // loop through each card and display it to page
-        app.resultsArr.forEach(function(card) {
-            // display a card taking the card.id from the api output
-            const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`).attr('alt', `${card.flavor}`);
-            const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
+}
 
-            // append each userCard to the display container 
-            $('.cardFlexContainer').append(userCard);
-        });
+// check if cards have been found and display them, else diplay message for no cards found
+app.checkToDisplay = function() {
+    if (app.resultsArr.length !== 0) {
+        // display cards found in results array
+        app.displayFoundCards();
     } else {
-        // no cards found in results array is displayed here
-        const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
-        $('.cardFlexContainer').append(noCardsMessage);
+        // display message if no cards found in results array
+        app.noCardsMessage();
     }
 }
 
+// display all the found cards to cardFlexContainer - method
+app.displayFoundCards = function() {
+    // loop through each card found and display it to page
+    app.resultsArr.forEach(function(card) {
+        // display a card taking the card.id from the api output
+        const cardImage = $('<img>').addClass('cardImg').attr('src', `https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.id}.png`).attr('alt', `${card.flavor}`);
+        const userCard = $('<li>').addClass('cardBox').append(cardImage).attr({'id':`${card.id}`,'tabindex':0});
+        // append each userCard to the display container 
+        $('.cardFlexContainer').append(userCard);
+    });
+}
+
+// display a message if no cards found - method
+app.noCardsMessage = function() {
+    // no cards found in results array is displayed here
+    const noCardsMessage = $('<p>').addClass('noCards').text('No cards found! Please update search.');
+    $('.cardFlexContainer').append(noCardsMessage);
+}
+
+// update cards found and reset name search - method
 app.updateForm = function() {
     // update number of cards found to page
     app.cardsFoundTotal = app.resultsArr.length;
