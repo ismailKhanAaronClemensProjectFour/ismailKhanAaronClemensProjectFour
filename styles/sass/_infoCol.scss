@@ -8,7 +8,6 @@ main {
 }
 
 .chosenCard {
-		// max-width: 350px;
 		margin: 0 auto 10px auto;
 		
 		img {
@@ -16,8 +15,6 @@ main {
 		}
 		
 		.unhide {
-				// border: 3px outset #f2af1b;
-				// background: rgba(242, 175, 27, 0.3);
 				visibility: visible;
 				
 				width: 100%;
@@ -30,11 +27,6 @@ main {
 		}
 }
 
-// .styleProp span {
-// 	text-transform: lowercase;
-// 	text-transform: capitalize;
-// }
-
 .detailContainer {
 		padding: 5px 5px 10px 7px;
 		background: $borderBackground;
@@ -42,7 +34,6 @@ main {
 		margin-top: -30px;
 
 		p {
-				// line-height: 1.4;
 				padding-top: 7px;
 				color: $heading;
 				border-bottom: 1px solid $displayLines;

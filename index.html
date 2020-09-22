@@ -10,11 +10,10 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<!-- google fonts -->
 	<link href="https://fonts.googleapis.com/css2?family=Gentium+Basic&family=Merienda+One&family=Quicksand:wght@600&display=swap" rel="stylesheet"> 
-	<!-- favicon -->
-		<!-- hearthstone mana crystal :> -->
+	<!-- favicon (hearthstone mana crystal :>) -->
 	<link rel="shortcut icon" type="image/x-icon" href="./assets/mana_crystal.ico" />
 
-	<title>Aaron Branch</title>
+	<title>Hearthstone Card Search Toolkit</title>
 </head>
 <body>
 		<header>
@@ -112,6 +111,7 @@
 								</select>
 							</fieldset>
 						</div>
+						
 						<div class="formSecondHalf">
 							<!-- type -->
 							<fieldset class="typeSelect">
@@ -125,7 +125,8 @@
 									<!-- hero power -->
 								</select>
 							</fieldset>
-														<!-- cost -->
+							
+							<!-- cost -->
 							<fieldset class="costSelect">
 								<label for="cost">Cost:</label>
 								<select name="cost" id="cost">
@@ -193,19 +194,16 @@
 				<section class="displayCol displayWrapper">
 					<ul class="cardFlexContainer">
 						<!-- inject js in here -->
-
 					</ul>
 				</section>
 		
 				<!-- rightmost column -->
 				<section class="infoCol sidebar">
 					<!-- card img --> 
-						<!-- <img src="" alt="" class="card"> -->
 					<div class="chosenCard">
 						<img src="https://art.hearthstonejson.com/v1/render/latest/enUS/256x/TRL_390.png" alt="">
 					</div>
 					<!-- card information -->
-					<!-- <h2>Card Information</h2> -->
 					<div class="detailContainer">
 						<p>Name: <span id="cardName"></span></p>
 						<p>Cost: <span id="cardCost"></span></p>
@@ -214,15 +212,10 @@
 						<p class="styleProp">Type: <span id="cardType"></span></p>
 						<p class="styleProp">Rarity: <span id="rarity"></span></p> 
 						<p>Expansion: <br><span id="xpac"></span></p>
-						<!-- <p>Card ID: <span id="id"></span></p> -->
 						<p>Artist: <span id="artist"></span></p>
 						<p>Flavour Text: <br><span id="flavour"></span></p>
-						<!-- <span>${card.rarity}</span> -->
-						<!-- maybe re-add attack, cost, defense here again for screen readers -->
 					</div>
 					
-					<!-- deck builder STRETCH GOAL -->
-					<!-- add card button -->	
 				</section>	
 			</div><!-- end wrapper -->
 		</main>
