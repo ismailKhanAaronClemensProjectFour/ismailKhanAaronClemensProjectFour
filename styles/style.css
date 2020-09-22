@@ -27,8 +27,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -46,8 +45,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 b, strong {
@@ -141,8 +139,7 @@ fieldset {
 }
 
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -160,8 +157,7 @@ textarea {
 }
 
 [type=checkbox], [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -213,13 +209,11 @@ template {
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 .sr-only {
@@ -230,8 +224,7 @@ html {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -261,9 +254,7 @@ ol {
 }
 
 select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 h1,
@@ -311,13 +302,8 @@ main {
 
 main .sidebar {
   height: calc(100% - 30px - 60px);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: fixed;
   padding: 10px;
   top: 60px;
@@ -357,15 +343,9 @@ main .sidebar {
 header {
   height: 60px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -447,7 +427,7 @@ form fieldset select,
 form fieldset input {
   width: 100%;
   margin-top: 5px;
-  padding: 1px;
+  padding: 1px 5px;
 }
 
 form fieldset input {
@@ -541,13 +521,9 @@ form button[type="submit"]:focus {
 .displayWrapper .cardFlexContainer {
   width: 100%;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-content: flex-start;
+  flex-wrap: wrap;
   padding: 70px 10px 40px 10px;
   background-image: url("https://www.hearthpwn.com/Content/1-7-987-0/Skins/Hearth/images/class_choose_frame.png");
   background-position: center;
@@ -564,8 +540,7 @@ form button[type="submit"]:focus {
 }
 
 .displayWrapper .cardFlexContainer .cardBox:hover, .displayWrapper .cardFlexContainer .cardBox:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .displayWrapper .cardFlexContainer .noCards {
@@ -603,12 +578,11 @@ form button[type="submit"]:focus {
 main .infoCol {
   width: calc(1665px * 0.25);
   right: calc((100% - 1665px) / 2);
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
 .chosenCard {
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
 }
 
 .chosenCard img {
@@ -621,8 +595,7 @@ main .infoCol {
   height: 100%;
   max-width: 330px;
   max-height: 330px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -15px;
 }
 
@@ -679,12 +652,8 @@ footer {
 }
 
 footer .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 footer .wrapper p:last-child {
@@ -704,11 +673,7 @@ footer .wrapper p:last-child {
   }
   footer .wrapper {
     height: 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
