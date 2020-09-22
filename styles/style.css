@@ -579,10 +579,15 @@ main .infoCol {
   width: calc(1665px * 0.25);
   right: calc((100% - 1665px) / 2);
   transition: all 0.3s linear;
+  justify-content: flex-start;
 }
 
 .chosenCard {
   margin: 0 auto;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+  top: -20px;
 }
 
 .chosenCard img {
@@ -592,19 +597,13 @@ main .infoCol {
 .chosenCard .unhide {
   visibility: visible;
   width: 100%;
-  height: 100%;
-  max-width: 330px;
-  max-height: 330px;
   object-fit: cover;
-  margin-top: -15px;
 }
 
 .detailContainer {
   padding: 5px;
   background: #281f15;
   border-radius: 1rem;
-  margin-top: -30px;
-  height: 60%;
 }
 
 .detailContainer p {
@@ -628,6 +627,10 @@ main .infoCol {
   main .infoCol {
     width: calc((96 * 0.25) * 1%);
     right: 2%;
+  }
+  .chosenCard {
+    margin-bottom: -30px;
+    width: calc((150/10 * 1rem) + (100vw - (769*1px))*((200 - 150)/(1000 - 769)));
   }
 }
 

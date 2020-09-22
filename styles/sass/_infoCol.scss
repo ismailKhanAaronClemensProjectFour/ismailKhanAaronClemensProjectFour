@@ -4,11 +4,16 @@ main {
 				width: calc(1665px * 0.25);
 				right: calc((100% - 1665px) / 2); 
 				transition: all 0.3s linear;
+				justify-content: flex-start;
 		}
 }
 
 .chosenCard {
 		margin: 0 auto;
+		width: 100%;
+		max-width: 250px;
+		position:relative;
+		top:-20px;
 		
 		img {
 				visibility: hidden;
@@ -18,12 +23,7 @@ main {
 				visibility: visible;
 				
 				width: 100%;
-				height: 100%;
-				max-width: 330px;
-				max-height: 330px;
-				
 				object-fit: cover;
-				margin-top: -15px;
 		}
 }
 
@@ -31,8 +31,6 @@ main {
 		padding: 5px;
 		background: $borderBackground;
 		border-radius: 1rem;
-		margin-top: -30px;
-		height:60%;
 
 		p {
 				padding-top: 7px;
@@ -65,6 +63,11 @@ main {
 			right: 2%;
 		}
 	}
+
+	.chosenCard {
+		margin-bottom: -30px;
+		@include variableWidth(150, 769, 200, 1000);
+	}
 }
 
 @media (max-width: 768px) {
@@ -80,6 +83,3 @@ main {
 	}
 }
 
-@media (max-height: 730px) {
-	
-}
