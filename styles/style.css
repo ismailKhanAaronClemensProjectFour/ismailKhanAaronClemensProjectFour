@@ -654,9 +654,6 @@ main .infoCol {
 }
 
 @media (max-width: 480px) {
-  .chosenCard {
-    width: 125px;
-  }
   .detailContainer {
     font-size: 1.2rem;
   }
