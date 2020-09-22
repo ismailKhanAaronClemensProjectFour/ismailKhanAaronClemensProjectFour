@@ -37,14 +37,24 @@ app.requestAllCards = $.ajax({
 // get all cards from api - method
 app.getAllCards = function() {
     app.requestAllCards.then(function(response) {
-        // set allCards array to all cards minus the cards with set= HERO_SKINS, these cards are unwanted for this project
-        app.allCards = response.filter(function(card) {
-            return card.set !== "HERO_SKINS";
-        });
+        // set allCards array to all cards minus the cards with set= HERO_SKINS, OR cards with both type = HERO and rarity = FREE, these cards are unwanted for this project
+        app.initialFilter(response);
+        // set results array to all cards, remaining after initial filter
         app.resultsArr = app.allCards;
         console.log('all the cards', app.resultsArr); //////// 2nd console log
         $searchButton.text('Search');
         app.getUserCards();
+    });
+}
+
+// intitially filter out unwanted cards from the response array from ajax
+app.initialFilter = function(response) {
+    app.allCards = response.filter(function(card) {
+        if (card.set === "HERO_SKINS" || card.type === "HERO" && card.rarity === "FREE") {
+            return
+        } else {
+            return card;
+        }
     });
 }
 
