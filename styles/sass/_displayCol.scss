@@ -76,3 +76,16 @@
         }
     }
 }
+
+// mini break just works best visually to have 2 cards per row here
+@media (max-width: 450px) {
+    .displayWrapper {
+
+        .cardFlexContainer {
+
+            .cardBox {
+                width: calc(100% / 2);
+            }
+        }
+    }
+}

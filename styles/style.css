@@ -560,6 +560,12 @@ form button[type="submit"]:focus {
   }
 }
 
+@media (max-width: 450px) {
+  .displayWrapper .cardFlexContainer .cardBox {
+    width: calc(100% / 2);
+  }
+}
+
 main .infoCol {
   width: calc(1665px * 0.25);
   right: calc((100% - 1665px) / 2);
