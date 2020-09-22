@@ -370,6 +370,15 @@ header h1 {
   }
 }
 
+@media (max-width: 480px) {
+  header .logoContainer {
+    width: calc((100/10 * 1rem) + (100vw - (320*1px))*((120 - 100)/(480 - 320)));
+  }
+  header h1 {
+    font-size: calc((18/10 * 1rem) + (100vw - (320*1px))*((26 - 18)/(480 - 320)));
+  }
+}
+
 main .selectCol {
   width: calc(1665px * 0.15);
 }

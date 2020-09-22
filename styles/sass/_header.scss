@@ -41,5 +41,18 @@ header {
   }
 }
 
+@media (max-width: 480px) {
+  header {
+
+    .logoContainer {
+      @include variableWidth(100, 320, 120, 480);
+    }
+
+    h1 {
+      @include variableFontSize(18, 320, 26, 480);
+    }
+  }
+}
+
 
 
