@@ -180,6 +180,7 @@ app.chooseACard = function() {
         app.userCard = app.resultsArr.find(function(card){
             return card.id === userCardId;
         });
+        // change card set name from api value to proper name used by Hearthstone.
         app.updateSetName();
         // display details of card and its image (userCardUrl)
         app.displayCardProperties(userCardUrl);
