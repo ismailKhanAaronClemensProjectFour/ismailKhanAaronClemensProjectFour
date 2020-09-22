@@ -99,8 +99,8 @@ main {
 	.detailContainer {
 		font-size: 1.2rem;
 
-		.costAttack,
-		.healthType {
+		.healthAttack,
+		.costType {
 			display: flex;
 
 			p {
@@ -108,7 +108,7 @@ main {
 			}
 		}
 
-		.healthType {
+		.costType {
 
 			p:first-child {
 				width: 40%;

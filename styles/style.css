@@ -657,18 +657,18 @@ main .infoCol {
   .detailContainer {
     font-size: 1.2rem;
   }
-  .detailContainer .costAttack,
-  .detailContainer .healthType {
+  .detailContainer .healthAttack,
+  .detailContainer .costType {
     display: flex;
   }
-  .detailContainer .costAttack p,
-  .detailContainer .healthType p {
+  .detailContainer .healthAttack p,
+  .detailContainer .costType p {
     width: 50%;
   }
-  .detailContainer .healthType p:first-child {
+  .detailContainer .costType p:first-child {
     width: 40%;
   }
-  .detailContainer .healthType p:last-child {
+  .detailContainer .costType p:last-child {
     width: 60%;
   }
 }
