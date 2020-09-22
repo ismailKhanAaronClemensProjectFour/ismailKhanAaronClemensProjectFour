@@ -39,23 +39,14 @@ app.getAllCards = function() {
     app.requestAllCards.then(function(response) {
         // set allCards array to all cards minus the cards with set= HERO_SKINS, OR cards with both type = HERO and rarity = FREE, these cards are unwanted for this project
         app.initialFilter(response);
-<<<<<<< HEAD
         // set results array to all cards, remaining after initial filter
-=======
-
-        // take filtered cards as new results array
->>>>>>> 4095017a8a38e9c2250e7478961131a0f9a189b5
         app.resultsArr = app.allCards;
         $searchButton.text('Search');
         app.getUserCards();
     });
 }
 
-<<<<<<< HEAD
 // intitially filter out unwanted cards from the response array from ajax
-=======
-// the initial filtering of ajax response to get rid of a few unwanted cards for this project
->>>>>>> 4095017a8a38e9c2250e7478961131a0f9a189b5
 app.initialFilter = function(response) {
     app.allCards = response.filter(function(card) {
         if (card.set === "HERO_SKINS" || card.type === "HERO" && card.rarity === "FREE") {
