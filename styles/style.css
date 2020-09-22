@@ -587,7 +587,7 @@ main .infoCol {
   width: 100%;
   max-width: 250px;
   position: relative;
-  top: -20px;
+  top: -30px;
 }
 
 .chosenCard img {
@@ -621,6 +621,9 @@ main .infoCol {
     width: calc((90 * 0.25) * 1%);
     right: 5%;
   }
+  .detailContainer {
+    margin-top: -40px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -629,7 +632,6 @@ main .infoCol {
     right: 2%;
   }
   .chosenCard {
-    margin-bottom: -30px;
     width: calc((150/10 * 1rem) + (100vw - (769*1px))*((200 - 150)/(1000 - 769)));
   }
 }
@@ -641,6 +643,13 @@ main .infoCol {
     background-position: right;
     right: -1000px;
     opacity: 0.97;
+  }
+  .chosenCard {
+    width: 150px;
+    top: -20px;
+  }
+  .detailContainer {
+    margin-top: -30px;
   }
 }
 

@@ -13,7 +13,7 @@ main {
 		width: 100%;
 		max-width: 250px;
 		position:relative;
-		top:-20px;
+		top:-30px;
 		
 		img {
 				visibility: hidden;
@@ -53,6 +53,10 @@ main {
 				right: 5%;           
 		}
 	}
+
+	.detailContainer {
+		margin-top: -40px;
+	}
 }
 
 @media (max-width: 1000px) {
@@ -65,7 +69,6 @@ main {
 	}
 
 	.chosenCard {
-		margin-bottom: -30px;
 		@include variableWidth(150, 769, 200, 1000);
 	}
 }
@@ -80,6 +83,15 @@ main {
 			right: -1000px;
 			opacity: 0.97;
 		}
+	}
+
+	.chosenCard {
+		width: 150px;
+		top: -20px;
+	}
+
+	.detailContainer {
+		margin-top: -30px;
 	}
 }
 
