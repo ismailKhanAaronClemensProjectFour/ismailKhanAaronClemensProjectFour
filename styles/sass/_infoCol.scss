@@ -102,6 +102,27 @@ main {
 
 	.detailContainer {
 		font-size: 1.2rem;
+
+		.costAttack,
+		.healthType {
+			display: flex;
+
+			p {
+				width: 50%;
+			}
+		}
+
+		.healthType {
+
+			p:first-child {
+				width: 40%;
+			}
+
+			p:last-child {
+				width: 60%;
+			}
+
+		}
 	}
 }
 

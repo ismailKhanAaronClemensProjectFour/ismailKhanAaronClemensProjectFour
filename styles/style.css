@@ -660,6 +660,20 @@ main .infoCol {
   .detailContainer {
     font-size: 1.2rem;
   }
+  .detailContainer .costAttack,
+  .detailContainer .healthType {
+    display: flex;
+  }
+  .detailContainer .costAttack p,
+  .detailContainer .healthType p {
+    width: 50%;
+  }
+  .detailContainer .healthType p:first-child {
+    width: 40%;
+  }
+  .detailContainer .healthType p:last-child {
+    width: 60%;
+  }
 }
 
 footer {
