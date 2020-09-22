@@ -600,10 +600,11 @@ main .infoCol {
 }
 
 .detailContainer {
-  padding: 5px 5px 10px 7px;
+  padding: 5px;
   background: #281f15;
   border-radius: 1rem;
   margin-top: -30px;
+  height: 60%;
 }
 
 .detailContainer p {
