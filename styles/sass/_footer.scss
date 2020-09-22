@@ -6,6 +6,8 @@ footer {
     padding: 5px 0;
     background: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
     color: $heading;
+    font-size: 1.6rem;
+    height: 30px;
     
     .wrapper {
         display: flex;
@@ -16,3 +18,8 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    footer {
+        @include variableFontSize(14, 480, 16, 768);
+    }
+}

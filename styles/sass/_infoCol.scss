@@ -3,6 +3,7 @@ main {
 		.infoCol {
 				width: calc(1665px * 0.25);
 				right: calc((100% - 1665px) / 2); 
+				transition: all 0.3s linear;
 		}
 }
 
@@ -35,10 +36,10 @@ main {
 // }
 
 .detailContainer {
-		padding: 5px 0 10px 7px;
+		padding: 5px 5px 10px 7px;
 		background: $borderBackground;
 		border-radius: 1rem;
-		margin-top: -35px;
+		margin-top: -30px;
 
 		p {
 				// line-height: 1.4;
@@ -78,7 +79,11 @@ main {
 	main {
 
 		.infoCol {
-			display: none;
+			width: 184px;
+			background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
+			background-position: right;
+			right: -1000px;
+			opacity: 0.97;
 		}
 	}
 }

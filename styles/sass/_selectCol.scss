@@ -127,47 +127,14 @@ form {
 
 @media (max-width: 768px) {
 	main {
-
 		.selectCol {
-			width: 96%;
-			top: 40px;
+			width: 110px;
+			background-image: url("http://hearthstone.cmrabet.com/c9363b32d270de2944fd498260f42009.png");
 		}
-	}
-
-	.selectionTitle {
-		display: flex;
-		justify-content: space-between;
-		width: 50%;
-		margin: 0 auto;
-		order: 2;
-	}
-
-	.formFirstHalf {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: flex-end;
-	}
-
-	.formSecondHalf {
-		display: flex;
-	}
-
-	form {
-
-		fieldset {
-			width: 20%;
-			margin: 5px;
-
-		}
-
-		button[type="submit"] {
-			padding: 10px;
-			margin: 5px;
-			width: 20%;
-		}
-		
 	}
 }
+
+	
 
 
 

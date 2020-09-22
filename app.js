@@ -4,6 +4,7 @@ const $userAttack = $('#attack');
 const $userHealth = $('#health');
 const $searchButton = $('button[type=submit]');
 const $cardsFound = $('.cardTotal span');
+const $infoCol = $('.infoCol');
 
 // namespace
 const app = {};
@@ -154,6 +155,8 @@ app.chooseACard = function() {
         app.updateSetName();
         // display details of card and its image (userCardUrl)
         app.displayCardProperties(userCardUrl);
+        // slide out the info column if its moved -100% to the right
+        app.slideColumn();
     });
 }
 
@@ -187,28 +190,29 @@ app.displayCardProperties = function(url) {
     $('span').append(flavour, artist, xpac, cardName, type, rarity, cardCost, cardAttack, cardHealth);
 }
 
-app.windowResize = function() {
-    $(window).on('resize', function() {
-        if ($(window).innerWidth() <= 768) {
-            $('label').addClass('sr-only');
-        }
-    })
+// slide info column onto page
+app.slideColumn = function() {
+    if ($infoCol.css('right') === '-1000px') {
+        $infoCol.css('right','0px');
+    }
 }
 
-app.onLoad = function() {
-    if($(window).innerWidth() <= 768) {
-        $('label').addClass('sr-only');
-    }
+// hide info column from page
+app.hideColumn = function() {
+    $infoCol.on('click', function() {
+        if($(this).css('right') === '0px') {
+            $(this).css('right', '-1000px');
+        }
+    })
 }
 
 // init method
 app.init = function() {
     console.log('initialized'); //////// 1st console log
-    // OUR CODE HERE
-    app.onLoad();
+    // OUR CODE HERE;
     app.getAllCards();
     app.chooseACard();
-    app.windowResize();
+    app.hideColumn();
 }
 
 // document ready
